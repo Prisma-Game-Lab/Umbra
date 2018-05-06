@@ -3,6 +3,7 @@
     {
         "**/.DS_Store":true,
         "**/.git":true,
+        "**/.gitkeep":true,
         "**/.gitignore":false,
         "**/.gitmodules":true,
         "**/*.booproj":true,
