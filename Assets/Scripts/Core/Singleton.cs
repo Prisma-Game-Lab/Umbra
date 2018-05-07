@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
+[InitializeOnLoad]
 public abstract class Singleton<T> : MonoBehaviour where T : Component
 {
 	
@@ -29,9 +31,11 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
 				instance = FindObjectOfType<T> ();
 				if ( instance == null )
 				{
-					GameObject obj = new GameObject ();
-					obj.name = typeof ( T ).Name;
-					instance = obj.AddComponent<T> ();
+					UnityEditor.EditorApplication.isPlaying = false;
+					throw new UnityException("Game Logic Error - An instance of " + typeof(T) + 
+												 " is needed in the scene, but there is none. " +
+												 "Have you imported the _global prefab into the scene?. " +
+												 "Aborting execution.");
 				}
 			}
 			return instance;
