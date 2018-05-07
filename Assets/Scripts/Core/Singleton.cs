@@ -34,7 +34,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
 					UnityEditor.EditorApplication.isPlaying = false;
 					throw new UnityException("Game Logic Error - An instance of " + typeof(T) + 
 												 " is needed in the scene, but there is none. " +
-												 "Have you imported the _global prefab into the scene?. " +
+												 "Have you imported the _GLOBAL_CONFIG_ prefab into the scene?. " +
 												 "Aborting execution.");
 				}
 			}
