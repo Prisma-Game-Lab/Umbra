@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class PlayerPhysics : MonoBehaviour
 {
+    // This sets on what the player id as ground. The ground must have the selected collider.
     public LayerMask CollisionMask;
 
     [HideInInspector] public bool IsGrounded;
@@ -53,7 +54,7 @@ public class PlayerPhysics : MonoBehaviour
         }
 
         Vector2 finalTransform = new Vector3(deltaX, deltaY);
-        
+
         transform.Translate(finalTransform);
     }
 }
