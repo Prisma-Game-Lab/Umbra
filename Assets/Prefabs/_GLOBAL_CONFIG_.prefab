@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114363171208567610}
   - component: {fileID: 114698840164963434}
   m_Layer: 0
-  m_Name: '--- GLOBAL CONFIGURATIONS ---'
+  m_Name: _GLOBAL_CONFIG_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
