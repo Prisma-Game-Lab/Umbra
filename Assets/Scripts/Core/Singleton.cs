@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[InitializeOnLoad]
 public abstract class Singleton<T> : MonoBehaviour where T : Component
 {
 	
