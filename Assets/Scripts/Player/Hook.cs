@@ -21,6 +21,8 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour {
 
+    public GameObject player; // FIXME: WORKAROUND FOR RIGIDBODY2D + OWN PLAYER PHYSICS
+
     public float distancia = 10f; // Variável para definir distancia máxima.
     public float step = 0.2f; // Variável auxiliar para velocidade de puxo.
     public LayerMask mask; // Variável para definir os objetos de colisão
@@ -32,7 +34,6 @@ public class Hook : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         joint = GetComponent<DistanceJoint2D> (); // Para associar a variável ao componete.
         joint.enabled = false; // Situação Quo "Não está usando o Hook".
         line.enabled = false; // Situação Quo "Não está usando o Hook", logo não existe corda.
@@ -40,26 +41,35 @@ public class Hook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (joint.distance > 1f) // Se houver espaço entre o jogador e o obejto de colisão...
+        if (joint.distance > 1f && joint.enabled) // Se houver espaço entre o jogador e o obejto de colisão...
+        {
             joint.distance -= step; // Altere a distância, "puxando" o jogador até o ponto de impacto.
 
-            else { // Caso contrário...
-                line.enabled = false; // Estado Quo da corda.
-                joint.enabled = false; // Estado Quo do jogador.
-            }
+             // FIXME: WORKAROUND FOR RIGIDBODY2D + OWN PLAYER PHYSICS
+            player.transform.position = (transform.TransformPoint(joint.anchor)
+                                        - joint.connectedBody.transform.TransformPoint(joint.connectedAnchor)).normalized
+                                        * joint.distance
+                                        + joint.connectedBody.transform.TransformPoint(joint.connectedAnchor);
+                                        
+        }
+        else { // Caso contrário...
+            line.enabled = false; // Estado Quo da corda.
+            joint.enabled = false; // Estado Quo do jogador.
+        }  
 		if (Input.GetKeyDown (KeyBindings.Instance.playerHook)) // Se o botão default para acionar o Hook foi precionado...
         {
             alvo = Camera.main.ScreenToWorldPoint (Input.mousePosition); // O alvo vai ser definido pelo mouse (Temporário).
             alvo.z = 0; // O vetor.z é sempre 0.
 
             hit = Physics2D.Raycast (transform.position, alvo - transform.position, distancia, mask); // Definição de colisão.
+            Debug.DrawRay(transform.position, alvo - transform.position, Color.green);
 
             if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D> () != null) // Se colidiu com algo...
             {
                 joint.enabled = true; // Neste instânte, o Hook foi acionado e colidiu com algo.
                 joint.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>(); // Conecta nosso personagem pelo Hook.
-                joint.connectedAnchor = hit.point - new Vector2 (hit.collider.transform.position.x, hit.collider.transform.position.y); // O Hook vais e fixar na borda do Objeto atingido.
-                joint.distance = Vector2.Distance(transform.position,hit.point); // Mantém a distância de prisão constante.
+                joint.connectedAnchor = hit.collider.transform.InverseTransformPoint(hit.point);  // O Hook vais e fixar na borda do Objeto atingido.
+                joint.distance = Vector2.Distance(transform.position, hit.point); // Mantém a distância de prisão constante.
 
                 line.enabled = true; // Neste instânte, o Hook foi acionado e colidiu com algo com distancia grande o suficiente para existir a corda.
                 line.SetPosition (0, transform.position); // Inicializa o lançamento da corda.
