@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Tests/Ponce Tests/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: a10f0ceca7ef7a448b1965f8cbe0bffe
   - enabled: 1
     path: Assets/Scenes/Levels/Level00.unity
     guid: 7f0c4e7f7dff97749af8ba597bb5ef4f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level01.unity
+    guid: 398e459b878ecb944b57169f28e149f6
   - enabled: 1
     path: Assets/Scenes/Levels/Level02.unity
     guid: 92ee94b2f4565c148814ac534fca0508
