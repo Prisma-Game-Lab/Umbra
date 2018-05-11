@@ -4,7 +4,7 @@ using UnityEngine;
 public class ArcherShot : MonoBehaviour
 {
     public GameObject ArrowPrefab;
-    [Range(1, 10)] public float ShotCooldown = 1;
+    [Range(0, 10)] public float ShotCooldown = 1;
 
     private bool _canShoot = true;
 
