@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level02.unity
     guid: 92ee94b2f4565c148814ac534fca0508
+  - enabled: 1
+    path: Assets/Scenes/Tests/Ponce Tests/PauseMenu.unity
+    guid: be40ef6873e3e1a40a3c93b0cc0aa962
   m_configObjects: {}
