@@ -31,14 +31,7 @@ public class PauseMenu : MonoBehaviour {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPause = false;
-        if (!SceneManager.GetSceneByName(PauseMenuScene).isLoaded)
-        {
-            SceneManager.LoadScene(PauseMenuScene, LoadSceneMode.Additive);
-        }
-        else
-        {
-            SceneManager.UnloadScene(PauseMenuScene);
-        }
+        
     }
 
 
