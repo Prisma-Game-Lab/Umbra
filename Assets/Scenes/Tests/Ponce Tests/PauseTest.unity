@@ -152,7 +152,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114084926442418240, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &27765256 stripped
@@ -160,6 +161,39 @@ Transform:
   m_PrefabParentObject: {fileID: 4671831355841804, guid: 60955081f314e79489eaff6dbc9416a2,
     type: 2}
   m_PrefabInternal: {fileID: 27765255}
+--- !u!1 &27765257 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1200523143520678, guid: 60955081f314e79489eaff6dbc9416a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 27765255}
+--- !u!120 &27765258 stripped
+LineRenderer:
+  m_PrefabParentObject: {fileID: 120702757222146822, guid: 60955081f314e79489eaff6dbc9416a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 27765255}
+--- !u!1 &27765259 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1414802952041264, guid: 60955081f314e79489eaff6dbc9416a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 27765255}
+--- !u!114 &27765260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 27765257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f736f42a38134499022f4e6942367f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 27765259}
+  distancia: 100
+  step: 0.8
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
+  line: {fileID: 27765258}
 --- !u!1 &351550085
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuScene: PauseMenu
+  GameIsPause: 0
 --- !u!1001 &1676005937
 Prefab:
   m_ObjectHideFlags: 0
