@@ -7,17 +7,20 @@ public class PlayerController : MonoBehaviour
     public float Speed = 10;
     public float Acceleration = 10;
     public float JumpHeight = 10;
-    public bool DoubleJump = true;
+    public int NumJumps = 2;
 
     private float _currentSpeed;
     private float _targetSpeed;
     private Vector3 _amountToMove;
+    private int _currentAvailableJumps;
+    private bool _wasGroundedLastUpdate;
 
     private PlayerPhysics _playerPhysics;
 
     private void Start()
     {
         _playerPhysics = GetComponent<PlayerPhysics>();
+        this._currentAvailableJumps = this.NumJumps;
     }
 
     private void Update()
@@ -31,30 +34,32 @@ public class PlayerController : MonoBehaviour
         _targetSpeed = Input.GetAxisRaw("Horizontal") * Speed;
         _currentSpeed = IncrementTowards(_currentSpeed, _targetSpeed, Acceleration);
 
+
         if (_playerPhysics.IsGrounded)
         {
-            _amountToMove.y = 0;
-
-            if (Input.GetButtonDown("Jump"))  // Jump
-                _amountToMove.y = JumpHeight;
+            _amountToMove.y = Mathf.Max(0.0f, _amountToMove.y);
         }
         else
         {
-            if (DoubleJump)
+            _amountToMove.y -= Gravity * Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump"))  // Jump
+        {
+            if(this._currentAvailableJumps > 0)
             {
-                if (_playerPhysics.CanDoubleJump)
-                {
-                    if (Input.GetButtonDown("Jump"))
-                    {
-                        _amountToMove.y = JumpHeight;
-                        _playerPhysics.CanDoubleJump = false;
-                    }
-                }
+                this._currentAvailableJumps -= 1;
+                _amountToMove.y = JumpHeight;
             }
         }
 
+        if (_playerPhysics.IsGrounded == true && this._wasGroundedLastUpdate == false)
+        {
+            this._currentAvailableJumps = this.NumJumps;
+        }
+
+        this._wasGroundedLastUpdate = _playerPhysics.IsGrounded;
         _amountToMove.x = _currentSpeed;
-        _amountToMove.y -= Gravity * Time.deltaTime;
         _playerPhysics.Move(_amountToMove * Time.deltaTime);
     }
 

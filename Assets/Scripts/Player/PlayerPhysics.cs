@@ -7,7 +7,6 @@ public class PlayerPhysics : MonoBehaviour
     public LayerMask CollisionMask;
 
     [HideInInspector] public bool IsGrounded;  // When touching the ground
-    [HideInInspector] public bool CanDoubleJump;  // Sets if the player can double jump
     [HideInInspector] public bool IsStopped;  // When touching collision on the sides
 
     private BoxCollider2D _colllider;
@@ -30,8 +29,28 @@ public class PlayerPhysics : MonoBehaviour
         float deltaY = moveAmount.y;
         Vector2 pos = transform.position;
 
-        // Check collision up/down
+        // Check if is Grounded after movement
         IsGrounded = false;
+        if (deltaY <= float.Epsilon) {
+            for (int i = 0; i < 3; i++)
+            {
+                float dir = -1;
+                float x = (pos.x + _colCenter.x - _colSize.x / 2) + _colSize.x / 2 * i;
+                float y = pos.y + _colCenter.y + _colSize.y / 2 * dir;
+
+                _ray = new Ray2D(new Vector2(x, y), new Vector2(0, dir));
+                Debug.DrawRay(_ray.origin, _ray.direction, Color.green);
+                
+                _hit = Physics2D.Raycast(new Vector2(x, y), new Vector2(0, dir), Mathf.Abs(deltaY) + skin, CollisionMask);
+                if (_hit.collider != null)
+                {
+                    IsGrounded = true;
+                    break;
+                }
+            }
+        }
+
+        // Check collision up/down
         for (int i = 0; i < 3; i++)
         {
             float dir = Mathf.Sign(deltaY);
@@ -47,11 +66,9 @@ public class PlayerPhysics : MonoBehaviour
                 float dist = Vector2.Distance(_ray.origin, _hit.point);
 
                 if (dist > skin)
-                    deltaY = (-dist + skin) * dir;
+                    deltaY = (dist - skin) * dir;
                 else
-                    deltaY = 0;
-                IsGrounded = true;
-                CanDoubleJump = true;
+                    deltaY = 0.0f;
                 break;
             }
         }
@@ -73,14 +90,16 @@ public class PlayerPhysics : MonoBehaviour
                 float dist = Vector2.Distance(_ray.origin, _hit.point);
 
                 if (dist > skin)
-                    deltaX = (-dist + skin) * dir;
+                    deltaX = (dist - skin) * dir;
                 else
-                    deltaX = 0;
+                    deltaX = 0.0f;
                 IsStopped = true;
                 break;
             }
         }
 
+        deltaX = Mathf.Abs(deltaX) < float.Epsilon ? 0.0f : deltaX;
+        deltaY = Mathf.Abs(deltaY) < float.Epsilon ? 0.0f : deltaY;
         Vector2 finalTransform = new Vector2(deltaX, deltaY);
 
         transform.Translate(finalTransform);
