@@ -14,13 +14,13 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Crystal
+  - Enemy
+  - Spike
+  - Hole
+  - Enemy Attack
+  - Goal
   - 
   - 
   - 
