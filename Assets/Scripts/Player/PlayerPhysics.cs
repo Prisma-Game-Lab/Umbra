@@ -7,7 +7,8 @@ public class PlayerPhysics : MonoBehaviour
     public LayerMask CollisionMask;
 
     [HideInInspector] public bool IsGrounded;  // When touching the ground
-    [HideInInspector] public bool IsStopped;  // When touching collision on the sides
+    [HideInInspector] public bool IsBlockedVertically;  // When touching collision on the sides
+    [HideInInspector] public bool IsBlockedHorizontally;  // When touching collision on the sides
 
     private BoxCollider2D _colllider;
     private Vector3 _colSize;
@@ -51,6 +52,7 @@ public class PlayerPhysics : MonoBehaviour
         }
 
         // Check collision up/down
+        IsBlockedVertically = false;
         for (int i = 0; i < 3; i++)
         {
             float dir = Mathf.Sign(deltaY);
@@ -69,12 +71,13 @@ public class PlayerPhysics : MonoBehaviour
                     deltaY = (dist - skin) * dir;
                 else
                     deltaY = 0.0f;
+                IsBlockedVertically = true;
                 break;
             }
         }
 
         // Check collision left/right
-        IsStopped = false;
+        IsBlockedHorizontally = false;
         for (int i = 0; i < 3; i++)
         {
             float dir = Mathf.Sign(deltaX);
@@ -93,7 +96,7 @@ public class PlayerPhysics : MonoBehaviour
                     deltaX = (dist - skin) * dir;
                 else
                     deltaX = 0.0f;
-                IsStopped = true;
+                IsBlockedHorizontally = true;
                 break;
             }
         }
