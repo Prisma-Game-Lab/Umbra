@@ -38,6 +38,13 @@ public class Hook : MonoBehaviour {
         joint.enabled = false; // Situação Quo "Não está usando o Hook".
         line.enabled = false; // Situação Quo "Não está usando o Hook", logo não existe corda.
     }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(this.transform.position, this.distancia);
+    }
 	
 	// Update is called once per frame
 	void Update () {
