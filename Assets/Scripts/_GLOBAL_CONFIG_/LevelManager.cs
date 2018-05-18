@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : Singleton<LevelManager> {
 
+	public int PlayerLayer;
 	public string MenuSceneName;
 	public string[] SceneNames;
 
@@ -54,5 +55,5 @@ public class LevelManager : Singleton<LevelManager> {
 	{
 		GoToLevel(currentLevel);
 	}
-	
+
 }

@@ -89,7 +89,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655829b245b46e443a2f9d21aea4f74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerLayer: 8
   MenuSceneName: MainMenu
   SceneNames:
   - Level00
   - Level01
+  - Level02
+  - Level03
+  - Level04
+  - Level05
+  - Level06

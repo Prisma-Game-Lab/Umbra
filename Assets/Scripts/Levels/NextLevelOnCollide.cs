@@ -6,8 +6,11 @@ public class NextLevelOnCollide : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D coll)
 	{
-		Debug.Log("Goal Reached! Changing Level...");
-		LevelManager.Instance.GoToNextLevel();
+		if(coll.gameObject.layer == LevelManager.Instance.PlayerLayer)
+		{
+			Debug.Log("Goal Reached! Changing Level...");
+			LevelManager.Instance.GoToNextLevel();
+		}
 	}
 
 }

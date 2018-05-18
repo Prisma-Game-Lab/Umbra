@@ -6,8 +6,11 @@ public class SameLevelOnCollide : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D coll)
 	{
-		Debug.Log("Resetting Level");
-		LevelManager.Instance.ResetLevel();
+		if(coll.gameObject.layer == LevelManager.Instance.PlayerLayer)
+		{
+			Debug.Log("Resetting Level");
+			LevelManager.Instance.ResetLevel();
+		}
 	}
 
 }
