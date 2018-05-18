@@ -49,4 +49,10 @@ public class LevelManager : Singleton<LevelManager> {
 			GoToLevel(-1);
 		}
 	}
+
+	public void ResetLevel()
+	{
+		GoToLevel(currentLevel);
+	}
+	
 }
