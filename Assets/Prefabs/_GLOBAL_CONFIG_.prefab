@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114363171208567610}
   - component: {fileID: 114698840164963434}
   - component: {fileID: 114766255932120540}
+  - component: {fileID: 114829843106499772}
   m_Layer: 0
   m_Name: _GLOBAL_CONFIG_
   m_TagString: Untagged
@@ -99,3 +100,16 @@ MonoBehaviour:
   - Level04
   - Level05
   - Level06
+--- !u!114 &114829843106499772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636641668133872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1a665310f93f647a13edfd2437a11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenuScene: PauseMenu
+  GameIsPause: 0

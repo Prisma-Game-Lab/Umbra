@@ -3,6 +3,11 @@
 [RequireComponent(typeof(PlayerPhysics))]
 public class PlayerController : MonoBehaviour
 {
+
+    public PauseScript PauseScript;
+
+
+
     public float Gravity = 10;
     public float Speed = 10;
     public float Acceleration = 10;
@@ -106,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private void updateWithHook()
     {
-		if (Input.GetKeyDown (KeyBindings.Instance.playerHook))
+		if (Input.GetKeyDown (KeyBindings.Instance.playerHook) && PauseScript.GameIsPause == false)
         {
             if(!_isHookOnPullPhase && !_isHookOnLaunchPhase)
             {

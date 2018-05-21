@@ -373,9 +373,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114829843106499772, guid: dbff1cd6af513154cab2543427bcf8a0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dbff1cd6af513154cab2543427bcf8a0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &90322649 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1636641668133872, guid: dbff1cd6af513154cab2543427bcf8a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 90322648}
+--- !u!114 &90322650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90322649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1a665310f93f647a13edfd2437a11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenuScene: PauseMenu
+  GameIsPause: 0
 --- !u!4 &93985785 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4242883120093770, guid: f7764f4d180b3ed48bd6051693eb64df,
@@ -558,31 +577,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 61780662379730354, guid: 60955081f314e79489eaff6dbc9416a2,
+    - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61780662379730354, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61780662379730354, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 61780662379730354, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61780662379730354, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: PauseScript
+      value: 
+      objectReference: {fileID: 90322650}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
