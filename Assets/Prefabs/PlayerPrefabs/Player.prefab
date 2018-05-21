@@ -79,7 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654003c0f9fea6b4eb1d38beaf2c20fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseScript: {fileID: 0}
+  PauseScript: {fileID: 114051966305392120, guid: dbff1cd6af513154cab2543427bcf8a0,
+    type: 2}
   Gravity: 40
   Speed: 20
   Acceleration: 90

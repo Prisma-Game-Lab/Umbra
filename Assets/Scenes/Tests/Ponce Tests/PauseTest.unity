@@ -569,7 +569,7 @@ Prefab:
         type: 2}
       propertyPath: PauseScript
       value: 
-      objectReference: {fileID: 769372669}
+      objectReference: {fileID: 769372670}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
@@ -578,24 +578,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4671831355841804, guid: 60955081f314e79489eaff6dbc9416a2,
     type: 2}
   m_PrefabInternal: {fileID: 637804325}
---- !u!1 &769372668 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1636641668133872, guid: dbff1cd6af513154cab2543427bcf8a0,
+--- !u!114 &769372670 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114051966305392120, guid: dbff1cd6af513154cab2543427bcf8a0,
     type: 2}
   m_PrefabInternal: {fileID: 1670735956}
---- !u!114 &769372669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 769372668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee1a665310f93f647a13edfd2437a11f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseMenuScene: PauseMenu
-  GameIsPause: 0
 --- !u!1001 &808129402
 Prefab:
   m_ObjectHideFlags: 0
