@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4671831355841804}
   - component: {fileID: 212690149621391680}
   - component: {fileID: 61780662379730354}
+  - component: {fileID: 114346198439007688}
   - component: {fileID: 114254695894668442}
   - component: {fileID: 114328992605814162}
   m_Layer: 8
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.69, y: -6.25, z: -5}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,6 +111,20 @@ MonoBehaviour:
   IsGrounded: 0
   IsBlockedVertically: 0
   IsBlockedHorizontally: 0
+--- !u!114 &114346198439007688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414802952041264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb554795af612549a2bde18705cc623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthMax: 1
+  TimeToDie: 1
+  CurrentHealth: 0
 --- !u!212 &212690149621391680
 SpriteRenderer:
   m_ObjectHideFlags: 1
