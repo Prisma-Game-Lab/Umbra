@@ -5,22 +5,20 @@ using UnityEngine;
 public class ArcherHealth : MonoBehaviour
 {
     public int HealthMax = 1;
-    public ParticleSystem ParticleOfDeath;
+    [Range(0, 60)] public float _timerDeath = 0;
 
-    /*[HideInInspector]*/ public int CurrentHealth;
-    private float _timerDeath = 0;
+    [HideInInspector] public int CurrentHealth;
+
 
     IEnumerator Death()
     {
-        //ParticleOfDeath.Play();
         yield return new WaitForSeconds(_timerDeath);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     private void Start()
     {
         CurrentHealth = HealthMax;
-        //_timerDeath =  (ParticleOfDeath == null) ? 0 : ParticleOfDeath.time;
     }
 
     private void Update()

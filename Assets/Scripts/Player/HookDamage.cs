@@ -8,16 +8,16 @@ public class HookDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        /*
+        
         if (col.CompareTag("Enemy"))
         {
             col.GetComponent<ArcherHealth>().CurrentHealth -= Damage;
         }
-        */
-
+        
+        /*
         if(col.GetComponent<GameObject>().layer == 12)
         {
             col.GetComponent<ArcherHealth>().CurrentHealth -= Damage;
-        }
+        }*/
     }
 }
