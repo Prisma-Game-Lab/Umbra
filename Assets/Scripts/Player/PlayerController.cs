@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float HookPullSpeed = 100.0f;
     public float HookPullFinishDistance = 2.0f;
     public LayerMask HookCollisionLayerMask;
+    public LayerMask EnemyCollisionLayerMask;
 
     public GameObject HookPrefab;
 
@@ -131,7 +132,13 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 localTranslation = new Vector3(1.0f, 0.0f, 0.0f) * this.HookLaunchSpeed * Time.deltaTime;
 			this._hookInstantiated.transform.localPosition += this._hookInstantiated.transform.TransformVector(localTranslation);
-            if(this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
+            if (this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
+            {
+                this._isHookOnLaunchPhase = false;
+                this._isHookOnPullPhase = true;
+                this._currentAvailableJumps = this.NumJumps;
+            }
+            else if (this._hookCollider.IsTouchingLayers(this.EnemyCollisionLayerMask))
             {
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;

@@ -6,6 +6,8 @@ public class Arrow : MonoBehaviour
     public float MaxDistance = 10;
     public float ArrowSpeed = 10;
 
+    //public LayerMask[] LayersToHit;
+
     private Vector2 _parentPosition;
     
 
@@ -21,11 +23,29 @@ public class Arrow : MonoBehaviour
         else
             transform.Translate(new Vector2(-ArrowSpeed / 10, 0));
     }
+    
+    /*
+    private bool CheckCollision(Collider2D target)
+    {
+        for (int i = 0; i < LayersToHit.Length; i++)
+            if (target.GetComponent<GameObject>().layer == LayersToHit[i])
+                return true;
+
+        return false;
+    }
+    */
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == 8)
+
+        if (col.gameObject.layer == 9)
             Destroy(this.gameObject);  // Destroy Arrow
+            
+
+        /*
+        if (CheckCollision(col) == true)
+            Destroy(this.gameObject);
+        */
 
         if (col.gameObject.CompareTag("Player"))  // Check if hit player
         {
