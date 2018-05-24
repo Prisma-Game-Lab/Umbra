@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthMax: 1
-  ParticleOfDeath: {fileID: 0}
+  _timerDeath: 1
   CurrentHealth: 0
 --- !u!4 &1431323648 stripped
 Transform:
