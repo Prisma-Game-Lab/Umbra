@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
     public float HookLaunchSpeed = 100.0f;
     public float HookPullSpeed = 100.0f;
     public float HookPullFinishDistance = 2.0f;
+
+    public float HookMaxDistance = 20.0f;
     public LayerMask HookCollisionLayerMask;
+    public LayerMask BreakCollisionLayerMask;
     public LayerMask EnemyCollisionLayerMask;
 
     public GameObject HookPrefab;
@@ -40,6 +43,8 @@ public class PlayerController : MonoBehaviour
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(this.transform.position, this.HookPullFinishDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(this.transform.position, this.HookMaxDistance);
     }
 
     private void Start()
@@ -133,7 +138,14 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 localTranslation = new Vector3(1.0f, 0.0f, 0.0f) * this.HookLaunchSpeed * Time.deltaTime;
             this._hookInstantiated.transform.localPosition += this._hookInstantiated.transform.TransformVector(localTranslation);
-            if (this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
+            if ((this._hookInstantiated.transform.position - this.transform.position).magnitude > HookMaxDistance) {
+                this.resetHook();
+            }
+            else if (this._hookCollider.IsTouchingLayers(this.BreakCollisionLayerMask))
+            {
+                this.resetHook();
+            }
+            else if (this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
             {
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
@@ -150,10 +162,13 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 deltaPosition = this._hookInstantiated.transform.position - this.transform.position;
             this._amountToMove = new Vector2(0.0f, 0.0f);
-            this._amountToMove = deltaPosition.normalized * this.HookPullSpeed;
             if (deltaPosition.magnitude <= this.HookPullFinishDistance)
             {
                 this.resetHook();
+            }
+            else
+            {
+                this._amountToMove = deltaPosition.normalized * this.HookPullSpeed;
             }
         }
     }

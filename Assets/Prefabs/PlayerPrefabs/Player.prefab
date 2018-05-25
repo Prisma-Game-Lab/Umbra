@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.75, y: -4.63, z: -5}
+  m_LocalPosition: {x: -13.92, y: -4.59, z: -5}
   m_LocalScale: {x: 0.056528017, y: 0.056527995, z: 0.056527995}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,12 +89,16 @@ MonoBehaviour:
   HookLaunchSpeed: 40
   HookPullSpeed: 40
   HookPullFinishDistance: 2
+  HookMaxDistance: 15.75
   HookCollisionLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8192
+  BreakCollisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 1536
   EnemyCollisionLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   HookPrefab: {fileID: 1715237323022502, guid: 71e70a5ceaca3ad49977126e0ba2d084, type: 2}
 --- !u!114 &114328992605814162
 MonoBehaviour:
