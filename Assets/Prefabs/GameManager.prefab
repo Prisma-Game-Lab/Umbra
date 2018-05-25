@@ -92,10 +92,9 @@ MonoBehaviour:
   PlayerLayer: 8
   MenuSceneName: MainMenu
   SceneNames:
-  - Level00
-  - Level01
-  - Level02
-  - Level03
-  - Level04
-  - Level05
-  - Level06
+  - Intro_00
+  - Intro_01
+  - Intro_02
+  - Intro_03
+  - Intro_04
+  - Zone00_00
