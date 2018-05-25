@@ -3,10 +3,8 @@
 [RequireComponent(typeof(PlayerPhysics))]
 public class PlayerController : MonoBehaviour
 {
-
+    #region Public
     public PauseScript PauseScript;
-
-
 
     public float Gravity = 10;
     public float Speed = 10;
@@ -21,7 +19,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask EnemyCollisionLayerMask;
 
     public GameObject HookPrefab;
+    #endregion
 
+    #region Private
     private float _currentSpeed;
     private float _targetSpeed;
     private Vector3 _amountToMove;
@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private CircleCollider2D _hookCollider;
 
     private PlayerPhysics _playerPhysics;
+    #endregion
 
     void OnDrawGizmosSelected()
     {
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour
         _amountToMove.x = _currentSpeed;
     }
 
-    private void updateWithGravity() 
+    private void updateWithGravity()
     {
         if (_playerPhysics.IsBlockedVertically)
         {
@@ -81,13 +82,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))  // Jump
         {
-            if(this._currentAvailableJumps > 0)
+            if (this._currentAvailableJumps > 0)
             {
                 this._currentAvailableJumps -= 1;
                 _amountToMove.y = JumpHeight;
                 this.resetHook();
             }
-            
+
         }
 
         if (_playerPhysics.IsGrounded == true && this._wasGroundedLastUpdate == false)
@@ -112,9 +113,9 @@ public class PlayerController : MonoBehaviour
 
     private void updateWithHook()
     {
-		if (Input.GetKeyDown (KeyBindings.Instance.playerHook) && PauseScript.GameIsPause == false)
+        if (Input.GetKeyDown(KeyBindings.Instance.playerHook) && PauseScript.GameIsPause == false)
         {
-            if(!_isHookOnPullPhase && !_isHookOnLaunchPhase)
+            if (!_isHookOnPullPhase && !_isHookOnLaunchPhase)
             {
                 this._isHookOnLaunchPhase = true;
                 Vector3 mouseClick3dRelativeToPlayer = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
@@ -123,7 +124,7 @@ public class PlayerController : MonoBehaviour
                 float rotationAngle = Vector2.SignedAngle(xAxis, mouseClick2dRelativeToPlayer);
                 Quaternion hookRotation = new Quaternion();
                 hookRotation.eulerAngles = new Vector3(0.0f, 0.0f, rotationAngle);
-                
+
                 this._hookInstantiated = Instantiate(this.HookPrefab, this.transform.position, hookRotation);
                 this._hookCollider = this._hookInstantiated.GetComponent<CircleCollider2D>();
             }
@@ -131,7 +132,7 @@ public class PlayerController : MonoBehaviour
         if (_isHookOnLaunchPhase)
         {
             Vector3 localTranslation = new Vector3(1.0f, 0.0f, 0.0f) * this.HookLaunchSpeed * Time.deltaTime;
-			this._hookInstantiated.transform.localPosition += this._hookInstantiated.transform.TransformVector(localTranslation);
+            this._hookInstantiated.transform.localPosition += this._hookInstantiated.transform.TransformVector(localTranslation);
             if (this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
             {
                 this._isHookOnLaunchPhase = false;

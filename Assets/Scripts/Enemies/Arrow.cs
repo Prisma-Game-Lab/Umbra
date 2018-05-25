@@ -8,22 +8,22 @@ public class Arrow : MonoBehaviour
 
     //public LayerMask[] LayersToHit;
 
-    private Vector2 _parentPosition;
-    
+    private Vector2 _initialPosition;
+
 
     private void Start()
     {
-        _parentPosition = GetComponentInParent<GameObject>().transform.position;
+        _initialPosition = this.transform.position;
     }
 
     private void Update()
     {
-        if (Mathf.Abs(Vector2.Distance(_parentPosition, this.transform.position)) > MaxDistance)
+        if (Mathf.Abs(Vector2.Distance(_initialPosition, this.transform.position)) > MaxDistance)
             Destroy(this.gameObject);  // Destroy Arrow
         else
             transform.Translate(new Vector2(-ArrowSpeed / 10, 0));
     }
-    
+
     /*
     private bool CheckCollision(Collider2D target)
     {
@@ -40,7 +40,7 @@ public class Arrow : MonoBehaviour
 
         if (col.gameObject.layer == 9)
             Destroy(this.gameObject);  // Destroy Arrow
-            
+
 
         /*
         if (CheckCollision(col) == true)
@@ -49,8 +49,10 @@ public class Arrow : MonoBehaviour
 
         if (col.gameObject.CompareTag("Player"))  // Check if hit player
         {
+            Debug.Log("ping");
+
             GetComponentInParent<ArcherShot>()._hasHit = true;  // Stops Archer of shooting
-            
+
             col.GetComponent<PlayerHealth>().CurrentHealth -= ArrowDamage;  // Reduce player health equal to arrow damage
 
             Destroy(this.gameObject);  // Destroy Arrow
