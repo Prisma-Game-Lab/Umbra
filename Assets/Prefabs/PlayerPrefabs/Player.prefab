@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.69, y: -6.25, z: -5}
+  m_LocalPosition: {x: -13.75, y: -4.63, z: -5}
   m_LocalScale: {x: 0.056528017, y: 0.056527995, z: 0.056527995}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseScript: {fileID: 0}
-  Gravity: 40
+  Gravity: 60
   Speed: 20
   Acceleration: 90
   JumpHeight: 20
