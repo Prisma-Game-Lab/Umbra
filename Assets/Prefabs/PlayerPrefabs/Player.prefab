@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseScript: {fileID: 0}
   Gravity: 60
-  Speed: 20
+  Speed: 10
   Acceleration: 90
   JumpHeight: 20
   NumJumps: 2
