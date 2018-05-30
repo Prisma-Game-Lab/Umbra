@@ -103,10 +103,10 @@ TextureImporter:
       name: arbusto armadilha hook_0
       rect:
         serializedVersion: 2
-        x: 214
-        y: 2028
-        width: 2929
-        height: 1276
+        x: 43
+        y: 405
+        width: 585
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,7 +114,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99c29574384e9024faf2b0ce0e22e662
+      spriteID: 5560410c96cb3584d86b5e91bb87c192
       vertices: []
       indices: 
       edges: []
@@ -123,10 +123,10 @@ TextureImporter:
       name: arbusto armadilha hook_1
       rect:
         serializedVersion: 2
-        x: 3546
-        y: 2060
-        width: 1379
-        height: 1098
+        x: 709
+        y: 412
+        width: 276
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 543cf81e4b0bf4146bdb80f4a66761b7
+      spriteID: 7a0dafe9ed973f34d876320d612167f9
       vertices: []
       indices: 
       edges: []
@@ -143,10 +143,10 @@ TextureImporter:
       name: arbusto armadilha hook_2
       rect:
         serializedVersion: 2
-        x: 302
-        y: 319
-        width: 590
-        height: 727
+        x: 60
+        y: 64
+        width: 118
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50e0784fe6bd0f74585b7f1c8d0ec006
+      spriteID: 5b02097bacd0b934a8081e5cb0bb8191
       vertices: []
       indices: 
       edges: []
@@ -163,10 +163,10 @@ TextureImporter:
       name: arbusto armadilha hook_3
       rect:
         serializedVersion: 2
-        x: 1105
-        y: 315
-        width: 254
-        height: 736
+        x: 221
+        y: 63
+        width: 51
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,7 +174,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40003e0ca95082f43ad9525c4107011e
+      spriteID: a9a246a5e3d30d04288b7e86e7bfd2a9
       vertices: []
       indices: 
       edges: []
@@ -183,10 +183,10 @@ TextureImporter:
       name: arbusto armadilha hook_4
       rect:
         serializedVersion: 2
-        x: 1591
-        y: 317
-        width: 151
-        height: 250
+        x: 318
+        y: 64
+        width: 30
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,7 +194,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52e53404836aad847b899106dc969632
+      spriteID: 8cdc3524335536845bd3bcd1c6a24c67
       vertices: []
       indices: 
       edges: []
@@ -203,10 +203,10 @@ TextureImporter:
       name: arbusto armadilha hook_5
       rect:
         serializedVersion: 2
-        x: 1971
-        y: 303
-        width: 1224
-        height: 736
+        x: 394
+        y: 61
+        width: 245
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,7 +214,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b7523ac6008745449bc26b1fc3ec07b
+      spriteID: 3a68d4ea8eb38a44384a5961cb4037b0
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
       name: arbusto armadilha hook_6
       rect:
         serializedVersion: 2
-        x: 3663
-        y: 297
-        width: 1123
-        height: 600
+        x: 733
+        y: 59
+        width: 224
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,7 +234,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3797e19d1080577458b02cb82eba33ca
+      spriteID: 4b00436dfe80ec3419b9a7b51acb5902
       vertices: []
       indices: 
       edges: []
@@ -242,7 +242,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 24ba9f6baa2e587479a4793ca735b277
+    spriteID: 57905b8eb7609d84c8dc7d9fd3f6ccfe
     vertices: []
     indices: 
     edges: []

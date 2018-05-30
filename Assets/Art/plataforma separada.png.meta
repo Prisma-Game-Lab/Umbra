@@ -105,10 +105,10 @@ TextureImporter:
       name: plataforma separada_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1233
-        width: 660
-        height: 405
+        x: 11
+        y: 830
+        width: 443
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,7 +116,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b0651cc0c660d64d92fdf96df155f59
+      spriteID: 732eff85dbca1bf4e81c20b439c68292
       vertices: []
       indices: 
       edges: []
@@ -125,10 +125,10 @@ TextureImporter:
       name: plataforma separada_1
       rect:
         serializedVersion: 2
-        x: 789
-        y: 1233
-        width: 666
-        height: 405
+        x: 531
+        y: 830
+        width: 448
+        height: 271
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a432f6ddd13e71149aba97ce743062bb
+      spriteID: d3ffd6090834220469b72f9e796a117f
       vertices: []
       indices: 
       edges: []
@@ -145,10 +145,10 @@ TextureImporter:
       name: plataforma separada_2
       rect:
         serializedVersion: 2
-        x: 1549
-        y: 1233
-        width: 652
-        height: 405
+        x: 1042
+        y: 830
+        width: 438
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb35e0259caaa1e42864180eb52f2c93
+      spriteID: 611454e2a883a604896a18f4a9813f4b
       vertices: []
       indices: 
       edges: []
@@ -165,10 +165,10 @@ TextureImporter:
       name: plataforma separada_3
       rect:
         serializedVersion: 2
-        x: 104
-        y: 467
-        width: 529
-        height: 701
+        x: 70
+        y: 314
+        width: 356
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c46c96c88162224d89d779362841b48
+      spriteID: 728a4d0999da9fc45a5e80589275ada2
       vertices: []
       indices: 
       edges: []
@@ -185,10 +185,10 @@ TextureImporter:
       name: plataforma separada_4
       rect:
         serializedVersion: 2
-        x: 787
-        y: 467
-        width: 668
-        height: 701
+        x: 529
+        y: 314
+        width: 450
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc2c695c43a93114f906a7ac3f6f924e
+      spriteID: 7b0321d7d6fdc8d41969205d63c8093a
       vertices: []
       indices: 
       edges: []
@@ -205,10 +205,10 @@ TextureImporter:
       name: plataforma separada_5
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 467
-        width: 533
-        height: 701
+        x: 1058
+        y: 314
+        width: 358
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +216,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120d6f6bd1891ce4197b929b73aeb474
+      spriteID: f60e7961135a3c844ad631b9c09097b8
       vertices: []
       indices: 
       edges: []
@@ -225,10 +225,10 @@ TextureImporter:
       name: plataforma separada_6
       rect:
         serializedVersion: 2
-        x: 302
-        y: 17
-        width: 338
-        height: 379
+        x: 203
+        y: 12
+        width: 227
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,7 +236,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50875611f3c884419a3d503c4505f66
+      spriteID: a1b81c9753f67474396a662341ef1400
       vertices: []
       indices: 
       edges: []
@@ -245,10 +245,10 @@ TextureImporter:
       name: plataforma separada_7
       rect:
         serializedVersion: 2
-        x: 787
-        y: 15
-        width: 667
-        height: 381
+        x: 529
+        y: 11
+        width: 449
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,7 +256,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e80258bda6e7c94ea19e1f71932b4cf
+      spriteID: 748dc19bafa34f94eb7ae197ff3827c4
       vertices: []
       indices: 
       edges: []
@@ -265,10 +265,10 @@ TextureImporter:
       name: plataforma separada_8
       rect:
         serializedVersion: 2
-        x: 1562
-        y: 13
-        width: 339
-        height: 383
+        x: 1051
+        y: 9
+        width: 227
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,7 +276,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23b678f3503203f47bf656b8233d4295
+      spriteID: 6efbbc3ffdf0e4f45bd4fdb3b9ac16cf
       vertices: []
       indices: 
       edges: []
@@ -284,7 +284,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 85ff053e50de4b2438bf3a01e109c630
+    spriteID: 277dcc9f4ef8d5442918137bbdcf0f64
     vertices: []
     indices: 
     edges: []
