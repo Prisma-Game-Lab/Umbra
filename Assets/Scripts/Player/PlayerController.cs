@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     private GameObject _hookInstantiated;
     private CircleCollider2D _hookCollider;
 
+	//som
+	public AudioSource hookGo;
+
     private PlayerPhysics _playerPhysics;
     #endregion
 
@@ -132,6 +135,9 @@ public class PlayerController : MonoBehaviour
 
                 this._hookInstantiated = Instantiate(this.HookPrefab, this.transform.position, hookRotation);
                 this._hookCollider = this._hookInstantiated.GetComponent<CircleCollider2D>();
+
+				hookGo = GameObject.Find("Hook Go").GetComponent<AudioSource>();
+				hookGo.Play ();
             }
         }
         if (_isHookOnLaunchPhase)
