@@ -20,9 +20,9 @@ TagManager:
   - Goal
   - Enemy
   - Hookable
-  - 
-  - 
-  - 
+  - LightSources
+  - AmbientLight
+  - LightObstacles
   - 
   - 
   - 
