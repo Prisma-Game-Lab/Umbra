@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
         {
             mySpriteRenderer.flipX = true;
         }
-        else
+        else if(_amountToMove.x < 0)
         {
             mySpriteRenderer.flipX = false;
         }
