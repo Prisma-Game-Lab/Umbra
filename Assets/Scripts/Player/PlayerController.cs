@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool _isHookOnPullPhase = false;
     private GameObject _hookInstantiated;
     private CircleCollider2D _hookCollider;
+    private SpriteRenderer mySpriteRenderer;
 
 	//som
 	public AudioSource hookGo;
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         _playerPhysics = GetComponent<PlayerPhysics>();
         this._currentAvailableJumps = this.NumJumps;
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void updateCurrentSpeed()
@@ -62,11 +64,13 @@ public class PlayerController : MonoBehaviour
         {
             _targetSpeed = 0;
             _currentSpeed = 0;
+            
         }
 
         _targetSpeed = Input.GetAxisRaw("Horizontal") * Speed;
         _currentSpeed = IncrementTowards(_currentSpeed, _targetSpeed, Acceleration);
         _amountToMove.x = _currentSpeed;
+        
     }
 
     private void updateWithGravity()
@@ -79,10 +83,12 @@ public class PlayerController : MonoBehaviour
         if (_playerPhysics.IsGrounded)
         {
             _amountToMove.y = Mathf.Max(0.0f, _amountToMove.y);
+            
         }
         else
         {
             _amountToMove.y -= Gravity * Time.deltaTime;
+           
         }
     }
 
@@ -185,6 +191,15 @@ public class PlayerController : MonoBehaviour
         this.updateWithGravity();
         this.updateWithJump();
         this.updateWithHook();
+
+        if(_amountToMove.x > 0)
+        {
+            mySpriteRenderer.flipX = true;
+        }
+        else
+        {
+            mySpriteRenderer.flipX = false;
+        }
 
         _playerPhysics.Move(_amountToMove * Time.deltaTime);
     }
