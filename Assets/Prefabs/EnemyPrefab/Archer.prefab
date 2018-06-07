@@ -21,11 +21,13 @@ GameObject:
   - component: {fileID: 4618729615623386}
   - component: {fileID: 212618874020244036}
   - component: {fileID: 50522698741021856}
+  - component: {fileID: 61767027292645274}
   - component: {fileID: 60585425140997894}
   - component: {fileID: 114019114444923734}
+  - component: {fileID: 114499084583015866}
   m_Layer: 12
   m_Name: Archer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595539064797744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.5, y: -15.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,7 +71,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595539064797744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -79,7 +81,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.995122, y: 2.8195121}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -92,6 +94,31 @@ PolygonCollider2D:
       - {x: -0.25, y: -0.5}
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: 0.5}
+--- !u!61 &61767027292645274
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595539064797744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.995122, y: 2.8195121}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2.7}
+  m_EdgeRadius: 0
 --- !u!114 &114019114444923734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +132,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowPrefab: {fileID: 1744517239873704, guid: 673a2d56822b6da4b806a1d6271e09dd,
     type: 2}
-  ShotCooldown: 1
+  ShotCooldown: 1.5
+  _hasHit: 0
+--- !u!114 &114499084583015866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595539064797744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5af290e8ea27478c3a1d0236fd854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthMax: 1
+  _timerDeath: 1
+  CurrentHealth: 0
 --- !u!212 &212618874020244036
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -141,8 +183,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f251a5243d9507e4fb91a1c2265ed5bd, type: 3}
-  m_Color: {r: 0.5754717, g: 0.09500711, b: 0.09500711, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 75037253c9108394bacbfdff866325d4, type: 3}
+  m_Color: {r: 0, g: 0.61960787, b: 0.3764706, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
