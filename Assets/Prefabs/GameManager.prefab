@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4593211320342366}
   - component: {fileID: 82441291675675542}
   m_Layer: 0
-  m_Name: Hook Go
+  m_Name: HookGo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 72eae37658c229446ae8b869dabc46fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 82ad572983cf31f489810847b066827f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
