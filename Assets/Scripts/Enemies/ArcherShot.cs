@@ -22,7 +22,12 @@ public class ArcherShot : MonoBehaviour
         {
             if (_canShoot)
             {
-                Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation, this.transform);
+                // Instantiate as child
+                // Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation, this.transform);
+
+                // Instantiate alone
+                Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation);
+
                 _canShoot = false;
                 StartCoroutine(Cooldown(ShotCooldown));
             }
