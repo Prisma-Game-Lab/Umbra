@@ -40,9 +40,7 @@ public class LoseColorOnHookScript : MonoBehaviour {
 	private void duringAnimation() {
 		this._colorAnimationTime += Time.deltaTime / this.AnimationDurationInSeconds;
 		if(this._colorAnimationTime >= 1.0f) {
-			this._colorAnimationTime = 1.0f;
-			this._hasStartedColorAnimation = true;
-			this._hasEndedColorAnimation = true;
+			this.onAnimationFinish();
 		}
 		this.TargetSpriteRenderer.color = new Color(1.0f, 1.0f, 1.0f) * this._colorAnimationTime +
 																			this._color * (1.0f - this._colorAnimationTime);
@@ -53,9 +51,20 @@ public class LoseColorOnHookScript : MonoBehaviour {
 
 	private void beforeAnimation() {
 		if(this._collider.IsTouchingLayers(this.HookLayer)) {
-			this._hasStartedColorAnimation = true;
-			this._colorAnimationTime = 0.0f;
-			this._color = this.TargetSpriteRenderer.color;
+			this.onHookHit();
 		}
+	}
+
+	private void onHookHit() {
+		this._hasStartedColorAnimation = true;
+		this._colorAnimationTime = 0.0f;
+		this._color = this.TargetSpriteRenderer.color;
+	}
+
+	private void onAnimationFinish() {
+		this._colorAnimationTime = 1.0f;
+		this._hasStartedColorAnimation = true;
+		this._hasEndedColorAnimation = true;
+		this.transform.gameObject.layer = 0;
 	}
 }

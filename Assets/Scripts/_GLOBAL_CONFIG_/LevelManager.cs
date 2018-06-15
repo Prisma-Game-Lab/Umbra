@@ -11,18 +11,23 @@ public class LevelManager : Singleton<LevelManager> {
 
 	private int currentLevel = -1;
 
-	// Use this for initialization
 	void Start () {
-		
+		// Finds the scene that is currently being played and set current level to it.
+		string currentSceneName = SceneManager.GetActiveScene().name;
+		for (int i = 0; i < this.SceneNames.Length; i++) {
+			if(currentSceneName == this.SceneNames[i]) {
+				// If found the scene, set the current level to it.
+				this.currentLevel = i;
+				break;
+			}
+		}
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Application.LoadLevel(Application.loadedLevel);
-        }
-		
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
 	}
 
 	public void GoToLevel(int level)

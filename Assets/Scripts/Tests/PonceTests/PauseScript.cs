@@ -29,7 +29,7 @@ public class PauseScript : MonoBehaviour
             }
             else
             {
-                SceneManager.UnloadScene(PauseMenuScene);
+                SceneManager.UnloadSceneAsync(PauseMenuScene);
             }
 
             

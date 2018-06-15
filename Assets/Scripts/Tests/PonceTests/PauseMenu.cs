@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour {
     {
 
         Time.timeScale = 1f;
-        SceneManager.UnloadScene(PauseMenuScene);
+        SceneManager.UnloadSceneAsync(PauseMenuScene);
         
     }
 
