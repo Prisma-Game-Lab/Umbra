@@ -6,9 +6,13 @@ public class LoseColorOnHookScript : MonoBehaviour {
 
 	[Header("Target Object")]
 	public SpriteRenderer TargetSpriteRenderer;
+	public List<GameObject> ObjectsToTurnOff;
 
-	[Header("Hook Info")]
+	public bool ShouldSetThisToUnseen = true;
+
+	[Header("Layer Info")]
   public LayerMask HookLayer;
+  public int UnseenLayer;
 
 	[Header("Animation Parameters")]
 	public float AnimationDurationInSeconds;
@@ -65,6 +69,13 @@ public class LoseColorOnHookScript : MonoBehaviour {
 		this._colorAnimationTime = 1.0f;
 		this._hasStartedColorAnimation = true;
 		this._hasEndedColorAnimation = true;
-		this.transform.gameObject.layer = 0;
+		if (this.ShouldSetThisToUnseen) {
+			this.transform.gameObject.layer = UnseenLayer;
+		} else {
+			this.transform.gameObject.layer = 0;
+		}
+		foreach(GameObject gameObj in this.ObjectsToTurnOff) {
+			gameObj.SetActive(false);
+		}
 	}
 }

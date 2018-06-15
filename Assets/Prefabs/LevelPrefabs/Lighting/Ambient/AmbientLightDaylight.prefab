@@ -9,43 +9,43 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1895898084292762}
+  m_RootGameObject: {fileID: 1593093249401942}
   m_IsPrefabParent: 1
---- !u!1 &1895898084292762
+--- !u!1 &1593093249401942
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4202346887924808}
-  - component: {fileID: 212590575667513030}
+  - component: {fileID: 4342039818206250}
+  - component: {fileID: 212549044876470088}
   m_Layer: 15
-  m_Name: AmbientLight
+  m_Name: AmbientLightDaylight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4202346887924808
+--- !u!4 &4342039818206250
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1895898084292762}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33, y: -0.22937465, z: 0}
-  m_LocalScale: {x: 40, y: 30, z: 2.01915}
+  m_GameObject: {fileID: 1593093249401942}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9954274, w: 0.09552096}
+  m_LocalPosition: {x: -7, y: -12.7, z: 0}
+  m_LocalScale: {x: 55.36242, y: 90.655556, z: 2.01915}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212590575667513030
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 169.037}
+--- !u!212 &212549044876470088
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1895898084292762}
+  m_GameObject: {fileID: 1593093249401942}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 436fdf2534281b84da88961bf8596c6f, type: 3}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2ec0eb68f14358c4a817625546afdc03, type: 3}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.8329477, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

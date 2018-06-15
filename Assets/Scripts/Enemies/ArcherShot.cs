@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ArcherShot : MonoBehaviour
 {
+    public bool isArrowEnabled = true;
     public GameObject ArrowPrefab;
     [Range(0, 10)] public float ShotCooldown = 1;
 
@@ -20,7 +21,7 @@ public class ArcherShot : MonoBehaviour
     {
         if (!_hasHit)
         {
-            if (_canShoot)
+            if (_canShoot && isArrowEnabled)
             {
                 // Instantiate as child
                 // Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation, this.transform);

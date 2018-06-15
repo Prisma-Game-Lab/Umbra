@@ -854,6 +854,26 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1925056054}
+    - target: {fileID: 114796384104740076, guid: 96343f47995668543bd147ea99a86e01,
+        type: 2}
+      propertyPath: m_Text
+      value: Acorde...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646162649000318, guid: 96343f47995668543bd147ea99a86e01,
+        type: 2}
+      propertyPath: m_Text
+      value: O grande dia chegou!
+      objectReference: {fileID: 0}
+    - target: {fileID: 224361052424165660, guid: 96343f47995668543bd147ea99a86e01,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 224361052424165660, guid: 96343f47995668543bd147ea99a86e01,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.415
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96343f47995668543bd147ea99a86e01, type: 2}
   m_IsPrefabParent: 0

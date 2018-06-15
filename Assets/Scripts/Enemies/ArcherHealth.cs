@@ -5,16 +5,17 @@ using UnityEngine;
 public class ArcherHealth : MonoBehaviour
 {
     public int HealthMax = 1;
-    [Range(0, 60)] public float _timerDeath = 0;
+    public ArcherShot archerShotScript;
+    // [Range(0, 60)] public float _timerDeath = 0;
 
     [HideInInspector] public int CurrentHealth;
 
 
-    IEnumerator Death()
-    {
-        yield return new WaitForSeconds(_timerDeath);
-        Destroy(this.gameObject);
-    }
+    // IEnumerator Death()
+    // {
+    //     yield return new WaitForSeconds(_timerDeath);
+    //     Destroy(this.gameObject);
+    // }
 
     private void Start()
     {
@@ -25,7 +26,8 @@ public class ArcherHealth : MonoBehaviour
     {
         if(CurrentHealth <= 0)
         {
-            StartCoroutine(Death());
+            // StartCoroutine(Death());
+            archerShotScript.isArrowEnabled = false;
         }
     }
 

@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.76, y: -6.29, z: -5.1914062}
+  m_LocalPosition: {x: -18.57, y: -0.39, z: -5.1914062}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4142365458135400}
@@ -117,10 +117,10 @@ MonoBehaviour:
   Acceleration: 90
   JumpHeight: 12
   NumJumps: 2
-  HookLaunchSpeed: 40
+  HookLaunchSpeed: 30
   HookPullSpeed: 40
   HookPullFinishDistance: 2
-  HookMaxDistance: 8
+  HookMaxDistance: 15.69
   HookCollisionLayerMask:
     serializedVersion: 2
     m_Bits: 8192

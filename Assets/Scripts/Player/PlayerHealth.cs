@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(CurrentHealth);
         if(CurrentHealth <= 0)
         {
             
