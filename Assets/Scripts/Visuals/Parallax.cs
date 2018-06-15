@@ -26,7 +26,7 @@ public class Parallax : MonoBehaviour {
 				this.FrontLayerObject == null)
 		{
 			Debug.LogError("Error at Parallax Script. PlayerObject or MiddleLayerObject or FrontLayerObject were not assigned.");
-			UnityEditor.EditorApplication.isPlaying = false;
+			// UnityEditor.EditorApplication.isPlaying = false;
 			return;
 		}
 		this._frontLayerInitialPosition = this.FrontLayerObject.transform.position;

@@ -12,6 +12,10 @@ Light is computed by path tracking with fixed number of steps (PATH_TRACKING_SAM
 #ifndef LIGHT_BASE_INCLUDED
 #define LIGHT_BASE_INCLUDED
 
+#ifndef PATH_TRACKING_SAMPLES
+#define PATH_TRACKING_SAMPLES 50
+#endif
+
 #pragma glsl_no_auto_normalization
 
 struct light2d_fixed_data_t {
