@@ -9,43 +9,59 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1151353632546332}
+  m_RootGameObject: {fileID: 1072078420861560}
   m_IsPrefabParent: 1
---- !u!1 &1151353632546332
+--- !u!1 &1072078420861560
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4257440081875128}
-  - component: {fileID: 212441691978449960}
-  m_Layer: 15
-  m_Name: GeneralDaylight
+  - component: {fileID: 4122075221884212}
+  - component: {fileID: 212257077094106894}
+  - component: {fileID: 111821585840319236}
+  m_Layer: 14
+  m_Name: CandleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4257440081875128
+--- !u!4 &4122075221884212
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151353632546332}
+  m_GameObject: {fileID: 1072078420861560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.027, y: -0.08, z: 0}
-  m_LocalScale: {x: 31.648096, y: 18.649824, z: 1}
+  m_LocalPosition: {x: -2.16, y: -1.01, z: 0}
+  m_LocalScale: {x: 0.7237582, y: 0.9566609, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212441691978449960
+--- !u!111 &111821585840319236
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072078420861560}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3a44ead6282be894e96d38575c27a9ad, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3a44ead6282be894e96d38575c27a9ad, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!212 &212257077094106894
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151353632546332}
+  m_GameObject: {fileID: 1072078420861560}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,12 +91,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 436fdf2534281b84da88961bf8596c6f, type: 3}
-  m_Color: {r: 1, g: 0.99823, b: 0.9103774, a: 0.59607846}
+  m_Sprite: {fileID: 21300000, guid: f10edde00fb4c64429d3f0b5a4035dca, type: 3}
+  m_Color: {r: 0.8207547, g: 0.6808628, b: 0.5458793, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

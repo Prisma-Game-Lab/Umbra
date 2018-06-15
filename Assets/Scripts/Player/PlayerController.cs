@@ -4,6 +4,8 @@
 public class PlayerController : MonoBehaviour
 {
     #region Public
+
+    public SpriteRenderer ShadowSpriteRenderer;
     public PauseScript PauseScript;
 
     public float Gravity = 10;
@@ -142,7 +144,7 @@ public class PlayerController : MonoBehaviour
                 this._hookInstantiated = Instantiate(this.HookPrefab, this.transform.position, hookRotation);
                 this._hookCollider = this._hookInstantiated.GetComponent<CircleCollider2D>();
 
-				hookGo = GameObject.Find("Hook Go").GetComponent<AudioSource>();
+				// hookGo = GameObject.Find("Hook Go").GetComponent<AudioSource>();
 				hookGo.Play ();
             }
         }
@@ -195,10 +197,12 @@ public class PlayerController : MonoBehaviour
         if(_amountToMove.x > 0)
         {
             mySpriteRenderer.flipX = true;
+            ShadowSpriteRenderer.flipX = true;
         }
         else if(_amountToMove.x < 0)
         {
             mySpriteRenderer.flipX = false;
+            ShadowSpriteRenderer.flipX = false;
         }
 
         _playerPhysics.Move(_amountToMove * Time.deltaTime);
