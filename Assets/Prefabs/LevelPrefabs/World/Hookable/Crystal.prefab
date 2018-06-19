@@ -200,6 +200,7 @@ MonoBehaviour:
   TargetSpriteRenderer: {fileID: 212700314076502038}
   ObjectsToTurnOff:
   - {fileID: 1556016369147532}
+  ShouldSetThisToUnseen: 1
   HookLayer:
     serializedVersion: 2
     m_Bits: 131072
