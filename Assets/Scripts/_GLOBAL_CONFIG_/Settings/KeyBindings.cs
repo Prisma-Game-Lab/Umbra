@@ -2,30 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+	All key bindings in the game are defined here.
+
+	Usage example:
+	Input.GetKeyDown(KeyBindings.Instance.PlayerMoveLeft)
+*/
+
 public class KeyBindings : Singleton<KeyBindings> {
 
 	[Header("Player Control")]
-	public KeyCode playerMoveUp;
-	public KeyCode playerMoveLeft;
-	public KeyCode playerMoveDown;
-	public KeyCode playerMoveRight;
-	public KeyCode playerJump;
-	public KeyCode playerDash;
-	public KeyCode playerHook;
-	
-	[Header("Menus")]
-	public KeyCode menuMoveUp;
-	public KeyCode menuMoveLeft;
-	public KeyCode menuMoveDown;
-	public KeyCode menuMoveRight;
-	public KeyCode menuEnter;
+	public KeyCode PlayerMoveLeft;
+	public KeyCode PlayerMoveRight;
+	public KeyCode PlayerJump;
+	public KeyCode PlayerHook;
 
-	// Use this for initialization
-	void Start () {
+	[Header("Game Flow")]
+	public KeyCode GameFlowOpenMenu;
+	public KeyCode GameFlowReloadScene;
+
+	public int GetAxisX() {
+		int delta = 0;
+		if(Input.GetKeyDown(KeyBindings.Instance.PlayerMoveRight)) {
+			delta += 1;
+		}
+		if(Input.GetKeyDown(KeyBindings.Instance.PlayerMoveLeft)) {
+			delta -= 1;
+		}
+		return delta;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

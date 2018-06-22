@@ -11,7 +11,7 @@ public class Jump : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump")) //make the player jump
+        if (Input.GetKeyDown(KeyBindings.Instance.PlayerJump)) //make the player jump
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
             jumpRequest = true;

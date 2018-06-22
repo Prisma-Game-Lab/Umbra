@@ -1470,18 +1470,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d27f81758940194b97e9023c7395632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveUp: 119
-  playerMoveLeft: 97
-  playerMoveDown: 115
-  playerMoveRight: 100
-  playerJump: 32
-  playerDash: 122
-  playerHook: 323
-  menuMoveUp: 119
-  menuMoveLeft: 97
-  menuMoveDown: 115
-  menuMoveRight: 100
-  menuEnter: 13
+  PlayerMoveLeft: 97
+  PlayerMoveRight: 100
+  PlayerJump: 32
+  PlayerHook: 323
+  GameFlowOpenMenu: 27
+  GameFlowReloadScene: 114
 --- !u!114 &114752228777050712
 MonoBehaviour:
   m_ObjectHideFlags: 1
