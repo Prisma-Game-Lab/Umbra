@@ -38,9 +38,6 @@ public class PlayerController : MonoBehaviour
     private CircleCollider2D _hookCollider;
     private SpriteRenderer mySpriteRenderer;
 
-	//som
-	public AudioSource hookGo;
-
     private PlayerPhysics _playerPhysics;
     #endregion
 
@@ -72,7 +69,16 @@ public class PlayerController : MonoBehaviour
         _targetSpeed = Input.GetAxisRaw("Horizontal") * Speed;
         _currentSpeed = IncrementTowards(_currentSpeed, _targetSpeed, Acceleration);
         _amountToMove.x = _currentSpeed;
-        
+
+		//checa se player está tentando se mover e toca som baseado nisso
+		if (_targetSpeed > float.Epsilon || _targetSpeed < -float.Epsilon) {
+			if (!LevelManager.Instance.PlayerWalk.isPlaying) {
+				LevelManager.Instance.PlayerWalk.PlayDelayed (LevelManager.Instance.PlayerWalkDelay);
+			}
+		} 
+		else {
+			LevelManager.Instance.PlayerWalk.Stop();
+		}
     }
 
     private void updateWithGravity()
@@ -100,6 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             if (this._currentAvailableJumps > 0)
             {
+				LevelManager.Instance.PlayerJump.PlayDelayed(LevelManager.Instance.PlayerJumpDelay); //toca som de pulo
                 this._currentAvailableJumps -= 1;
                 _amountToMove.y = JumpHeight;
                 this.resetHook();
@@ -145,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 this._hookCollider = this._hookInstantiated.GetComponent<CircleCollider2D>();
 
 				// hookGo = GameObject.Find("Hook Go").GetComponent<AudioSource>();
-				hookGo.Play ();
+				LevelManager.Instance.HookGo.PlayDelayed (LevelManager.Instance.HookGoDelay);
             }
         }
         if (_isHookOnLaunchPhase)
@@ -160,13 +167,16 @@ public class PlayerController : MonoBehaviour
                 this.resetHook();
             }
             else if (this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
-            {
+			{
+				LevelManager.Instance.HookHitLevel.PlayDelayed(LevelManager.Instance.HookHitLevelDelay); //toca som de quando a hook atinge algo
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
+				LevelManager.Instance.HookReturns.PlayDelayed(LevelManager.Instance.HookReturnsDelay); 
                 this._currentAvailableJumps = this.NumJumps;
             }
             else if (this._hookCollider.IsTouchingLayers(this.EnemyCollisionLayerMask))
             {
+				LevelManager.Instance.HookHitEnemy.PlayDelayed(LevelManager.Instance.HookHitEnemyDelay); //toca som de quando a hook atinge inimigo
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
                 this._currentAvailableJumps = this.NumJumps;

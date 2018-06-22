@@ -9,6 +9,31 @@ public class LevelManager : Singleton<LevelManager> {
 	public string MenuSceneName;
 	public string[] SceneNames;
 
+	[Header("Sons")]	//som
+	[Header("Sons da Hook")]
+	[Tooltip("AudioSource que guarda o som de ida do hook")]public AudioSource HookGo;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float HookGoDelay;
+	[Tooltip("AudioSource que guarda o som de quando o hook acerta o cenário")]public AudioSource HookHitLevel;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float HookHitLevelDelay;
+	[Tooltip("AudioSource que guarda o som de quando o hook acerta o inimigo")]public AudioSource HookHitEnemy;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float HookHitEnemyDelay;
+	[Tooltip("AudioSource que guarda o som de volta do hook")]public AudioSource HookReturns;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float HookReturnsDelay;
+
+	[Header("Sons do Player")]
+	[Tooltip("AudioSource que guarda o som do passo do player")]public AudioSource PlayerWalk;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float PlayerWalkDelay;
+	[Tooltip("AudioSource que guarda o som do pulo do player")]public AudioSource PlayerJump;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float PlayerJumpDelay;
+	[Tooltip("AudioSource que guarda o som do player morrendo")]public AudioSource PlayerDying;
+	[Tooltip("Delay em segundos que o áudio começa a tocar")]public float PlayerDyingDelay;
+
+	[Header("Sons do Inimigo")]
+	[Tooltip("Som que toca quando o archer toma dano")] public AudioSource ArcherDamageSound;
+	[Tooltip("Tempo em segundos que demora para o som começar a tocar")]public float ArcherDamageSoundDelay;
+	[Tooltip("Som que toca quando o archer ataca")] public AudioSource ArcherAttackSound;
+	[Tooltip("Tempo em segundos que demora para o som começar a tocar")]public float ArcherAttackSoundDelay;
+
 	private int currentLevel = -1;
 
 	void Start () {

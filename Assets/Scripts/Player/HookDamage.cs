@@ -11,7 +11,9 @@ public class HookDamage : MonoBehaviour
         
         if (col.CompareTag("Enemy"))
         {
-            col.GetComponent<ArcherHealth>().CurrentHealth -= Damage;
+			ArcherHealth enemy = col.GetComponent<ArcherHealth> ();
+            enemy.CurrentHealth -= Damage;
+			LevelManager.Instance.ArcherDamageSound.PlayDelayed(LevelManager.Instance.ArcherDamageSoundDelay);
         }
         
         /*
