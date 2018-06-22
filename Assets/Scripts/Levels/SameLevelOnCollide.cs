@@ -9,6 +9,7 @@ public class SameLevelOnCollide : MonoBehaviour {
 		if(coll.gameObject.layer == LevelManager.Instance.PlayerLayer)
 		{
 			Debug.Log("Resetting Level");
+			LevelManager.Instance.PlayerDying.PlayDelayed(LevelManager.Instance.PlayerDyingDelay); //toca som de player morrendo
 			LevelManager.Instance.ResetLevel();
 		}
 	}

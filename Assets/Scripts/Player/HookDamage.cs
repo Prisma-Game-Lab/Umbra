@@ -12,6 +12,7 @@ public class HookDamage : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             col.GetComponent<ArcherShot>().DisableShooting();
+			LevelManager.Instance.ArcherDamageSound.PlayDelayed(LevelManager.Instance.ArcherDamageSoundDelay);
         }
         
     }
