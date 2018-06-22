@@ -17,6 +17,10 @@ public class ArcherShot : MonoBehaviour
         _canShoot = true;
     }
 
+    public void DisableShooting() {
+        this._canShoot = false;
+    }
+
     private void FixedUpdate()
     {
         if (!_hasHit)

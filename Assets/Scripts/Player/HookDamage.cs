@@ -11,13 +11,8 @@ public class HookDamage : MonoBehaviour
         
         if (col.CompareTag("Enemy"))
         {
-            col.GetComponent<ArcherHealth>().CurrentHealth -= Damage;
+            col.GetComponent<ArcherShot>().DisableShooting();
         }
         
-        /*
-        if(col.GetComponent<GameObject>().layer == 12)
-        {
-            col.GetComponent<ArcherHealth>().CurrentHealth -= Damage;
-        }*/
     }
 }

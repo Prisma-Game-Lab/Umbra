@@ -23,13 +23,12 @@ public class KeyBindings : Singleton<KeyBindings> {
 
 	public int GetAxisX() {
 		int delta = 0;
-		if(Input.GetKeyDown(KeyBindings.Instance.PlayerMoveRight)) {
+		if(Input.GetKey(KeyBindings.Instance.PlayerMoveRight)) {
 			delta += 1;
 		}
-		if(Input.GetKeyDown(KeyBindings.Instance.PlayerMoveLeft)) {
+		if(Input.GetKey(KeyBindings.Instance.PlayerMoveLeft)) {
 			delta -= 1;
 		}
 		return delta;
 	}
-	
 }
