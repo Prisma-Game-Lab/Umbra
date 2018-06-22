@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        _targetSpeed = Input.GetAxisRaw("Horizontal") * Speed;
+        _targetSpeed = KeyBindings.Instance.GetAxisX() * Speed;
         _currentSpeed = IncrementTowards(_currentSpeed, _targetSpeed, Acceleration);
         _amountToMove.x = _currentSpeed;
         
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     private void updateWithJump()
     {
-        if (Input.GetButtonDown("Jump"))  // Jump
+        if (Input.GetKeyDown(KeyBindings.Instance.PlayerJump))  // Jump
         {
             if (this._currentAvailableJumps > 0)
             {
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
     private void updateWithHook()
     {
-        if (Input.GetKeyDown(KeyBindings.Instance.playerHook) && PauseScript.GameIsPause == false)
+        if (Input.GetKeyDown(KeyBindings.Instance.PlayerHook) && PauseScript.GameIsPause == false)
         {
             if (!_isHookOnPullPhase && !_isHookOnLaunchPhase)
             {

@@ -24,7 +24,7 @@ public class LevelManager : Singleton<LevelManager> {
 	}
 	
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.R))
+		if (Input.GetKeyDown(KeyBindings.Instance.GameFlowReloadScene))
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
