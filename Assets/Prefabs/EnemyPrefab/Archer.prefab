@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 60585425140997894}
   - component: {fileID: 114019114444923734}
   - component: {fileID: 114317964737638532}
+  - component: {fileID: 114949377168966530}
   m_Layer: 12
   m_Name: Archer
   m_TagString: Enemy
@@ -154,6 +155,20 @@ MonoBehaviour:
     m_Bits: 131072
   UnseenLayer: 18
   AnimationDurationInSeconds: 1
+--- !u!114 &114949377168966530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595539064797744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0675148106cabda48851ca52b2db6a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 706c4369bf4ec154390bd0ca96849894, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 256, y: 256}
 --- !u!212 &212618874020244036
 SpriteRenderer:
   m_ObjectHideFlags: 1
