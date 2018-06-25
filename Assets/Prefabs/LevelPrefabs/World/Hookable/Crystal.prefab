@@ -38,6 +38,8 @@ GameObject:
   - component: {fileID: 4884084469245758}
   - component: {fileID: 212700314076502038}
   - component: {fileID: 95081605045560358}
+  - component: {fileID: 61919070078513122}
+  - component: {fileID: 114909359630517272}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Untagged
@@ -97,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705192249748780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.36, y: 5.04, z: -0.19140625}
+  m_LocalPosition: {x: -1.06, y: 4.16, z: -0.19140625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4593767954129622}
@@ -149,6 +151,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &61919070078513122
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705192249748780}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.16, y: 0.93}
   m_EdgeRadius: 0
 --- !u!95 &95081605045560358
 Animator:
@@ -206,6 +233,20 @@ MonoBehaviour:
     m_Bits: 131072
   UnseenLayer: 18
   AnimationDurationInSeconds: 0.4
+--- !u!114 &114909359630517272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705192249748780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0675148106cabda48851ca52b2db6a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 706c4369bf4ec154390bd0ca96849894, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 256, y: 256}
 --- !u!212 &212008880458758148
 SpriteRenderer:
   m_ObjectHideFlags: 1
