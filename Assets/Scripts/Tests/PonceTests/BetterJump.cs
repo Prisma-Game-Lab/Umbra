@@ -13,16 +13,6 @@ public class BetterJump : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    //   void FixedUpdate() // here you control gravity from code
-    //  {
-    //       if(rb.velocity.y < 0) // when the player is falling //      {
-    //           rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; //dont need to change to fixed delta time 
-    //       } 
-    //          else if(rb.velocity.y > 0  && !Input.GetButton("Jump")) {
-    //
-    //            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime; // if you hold the jump button, the player jump higher
-    //        }
-    //    }
 
     void FixedUpdate() // here you can control gravity from unity
     {
@@ -30,7 +20,7 @@ public class BetterJump : MonoBehaviour {
         {
             rb.gravityScale = fallMultiplier;
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyBindings.Instance.PlayerJump))
         {
 
             rb.gravityScale = lowJumpMultiplier;

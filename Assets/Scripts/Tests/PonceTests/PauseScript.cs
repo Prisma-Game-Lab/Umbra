@@ -13,7 +13,8 @@ public class PauseScript : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) /// quando o jogador aperta escape, pausa o jogo, chama o menu de pause, e corrige o erro de gerar varios menus de pause
+        /// quando o jogador aperta escape, pausa o jogo, chama o menu de pause, e corrige o erro de gerar varios menus de pause
+        if (Input.GetKeyDown(KeyBindings.Instance.GameFlowOpenMenu))
         {
             if (GameIsPause)
             {

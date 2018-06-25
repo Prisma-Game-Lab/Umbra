@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 61767027292645274}
   - component: {fileID: 60585425140997894}
   - component: {fileID: 114019114444923734}
-  - component: {fileID: 114499084583015866}
   - component: {fileID: 114317964737638532}
   m_Layer: 12
   m_Name: Archer
@@ -40,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595539064797744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.748, y: 0.709, z: -0.74}
+  m_LocalPosition: {x: 6.99, y: -5.9, z: -0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +81,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7988281, y: 1.1289062}
+    oldSize: {x: 0.9088889, y: 1.2844445}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,7 +110,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7988281, y: 1.1289062}
+    oldSize: {x: 0.9088889, y: 1.2844445}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -155,20 +154,6 @@ MonoBehaviour:
     m_Bits: 131072
   UnseenLayer: 18
   AnimationDurationInSeconds: 1
---- !u!114 &114499084583015866
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1595539064797744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e5af290e8ea27478c3a1d0236fd854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthMax: 1
-  archerShotScript: {fileID: 114019114444923734}
-  CurrentHealth: 0
 --- !u!212 &212618874020244036
 SpriteRenderer:
   m_ObjectHideFlags: 1

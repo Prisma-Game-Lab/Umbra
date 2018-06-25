@@ -17,6 +17,10 @@ public class ArcherShot : MonoBehaviour
         _canShoot = true;
     }
 
+    public void DisableShooting() {
+        this._canShoot = false;
+    }
+
     private void FixedUpdate()
     {
         if (!_hasHit)
@@ -28,6 +32,7 @@ public class ArcherShot : MonoBehaviour
 
                 // Instantiate alone
                 Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation);
+				LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
 
                 _canShoot = false;
                 StartCoroutine(Cooldown(ShotCooldown));

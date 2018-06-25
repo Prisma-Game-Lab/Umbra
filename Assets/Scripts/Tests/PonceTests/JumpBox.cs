@@ -24,7 +24,7 @@ public class JumpBox : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetKeyDown(KeyBindings.Instance.PlayerJump) && grounded)
         {
             jumpRequest = true;
         }
