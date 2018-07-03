@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class HookDamage : MonoBehaviour
 {
-    public int Damage = 1;
-
     private void OnTriggerEnter2D(Collider2D col)
     {
-        
         if (col.CompareTag("Enemy"))
         {
-            col.GetComponent<ArcherShot>().DisableShooting();
+            col.GetComponent<ArcherShot>()._hasHit = true;
 			LevelManager.Instance.ArcherDamageSound.PlayDelayed(LevelManager.Instance.ArcherDamageSoundDelay);
         }
         
