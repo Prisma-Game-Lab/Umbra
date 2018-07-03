@@ -10,6 +10,7 @@ public class ArcherShot : MonoBehaviour
     [HideInInspector] public bool _hasHit = false;
 
     private bool _canShoot = true;
+    private Transform _middleLayerTransform;
 
     IEnumerator Cooldown(float cooldown)
     {
@@ -19,6 +20,11 @@ public class ArcherShot : MonoBehaviour
 
     public void DisableShooting() {
         this._canShoot = false;
+    }
+    
+    private void Start()
+    {
+        _middleLayerTransform = GameObject.FindGameObjectWithTag("Player").transform.parent;
     }
 
     private void FixedUpdate()
@@ -31,8 +37,12 @@ public class ArcherShot : MonoBehaviour
                 // Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation, this.transform);
 
                 // Instantiate alone
-                Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation);
-				LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
+                // Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation);
+                // LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
+
+                // Instantiate as Player's sibling
+                Instantiate<GameObject>(ArrowPrefab, this.transform.position, this.transform.rotation, _middleLayerTransform);
+                LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
 
                 _canShoot = false;
                 StartCoroutine(Cooldown(ShotCooldown));
