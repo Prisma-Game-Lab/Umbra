@@ -8,7 +8,8 @@ public class HookDamage : MonoBehaviour
     {
         if (col.CompareTag("Enemy"))
         {
-            col.GetComponent<ArcherShot>()._hasHit = true;
+            //col.GetComponent<ArcherShot>()._hasHit = true;        // Useless
+            col.GetComponent<NewArcherScript>().state = NewArcherScript.State.Dead;
 			LevelManager.Instance.ArcherDamageSound.PlayDelayed(LevelManager.Instance.ArcherDamageSoundDelay);
         }
         
