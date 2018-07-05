@@ -40,9 +40,6 @@ public class LevelManager : Singleton<LevelManager> {
 	private int currentLevel = -1;
 
 	void Start () {
-		// Finds the animator on canvas
-		animator = GameObject.Find("Canvas").GetComponent<Animator>();
-
 		// Finds the scene that is currently being played and set current level to it.
 		string currentSceneName = SceneManager.GetActiveScene().name;
 		for (int i = 0; i < this.SceneNames.Length; i++) {
@@ -55,6 +52,11 @@ public class LevelManager : Singleton<LevelManager> {
 	}
 	
 	void Update () {
+		if (animator == null) {
+			// Finds the animator on canvas
+			animator = GameObject.Find("Canvas").GetComponent<Animator>();
+		}
+
 		if (Input.GetKeyDown(KeyBindings.Instance.GameFlowReloadScene))
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
