@@ -8,6 +8,9 @@ public class LevelManager : Singleton<LevelManager> {
 	public int PlayerLayer;
 	public string MenuSceneName;
 	public string[] SceneNames;
+    public Animator animator;
+    
+
 
 	[Header("Sons")]	//som
 	[Header("Sons da Hook")]
@@ -78,11 +81,15 @@ public class LevelManager : Singleton<LevelManager> {
 		if(currentLevel + 1 < SceneNames.Length)
 		{
 			GoToLevel(currentLevel + 1);
-		}
+            
+
+        }
 		else
 		{
 			GoToLevel(-1);
-		}
+            FadeToLevel();
+
+        }
 	}
 
 	public void ResetLevel()
@@ -90,4 +97,11 @@ public class LevelManager : Singleton<LevelManager> {
 		GoToLevel(currentLevel);
 	}
 
+    public void FadeToLevel()
+    {
+       
+        animator.SetTrigger("FadeOut");
+    }
+
+    
 }

@@ -1625,6 +1625,7 @@ MonoBehaviour:
   - Zone00_02
   - Zone00_03
   - Zone00_04
+  animator: {fileID: 95623449589876394, guid: 7167c3856e5ef4144bc771c84e601ad9, type: 2}
   HookGo: {fileID: 82998856947101052}
   HookGoDelay: 0
   HookHitLevel: {fileID: 82285189468720908}
