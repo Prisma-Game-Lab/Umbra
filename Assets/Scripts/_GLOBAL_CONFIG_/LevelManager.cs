@@ -37,6 +37,11 @@ public class LevelManager : Singleton<LevelManager> {
 	[Tooltip("Som que toca quando o archer ataca")] public AudioSource ArcherAttackSound;
 	[Tooltip("Tempo em segundos que demora para o som começar a tocar")]public float ArcherAttackSoundDelay;
 
+	[Header("Sons do Cristal")]
+	[Tooltip("Som que toca quando o cristal é absorvido")] public AudioSource CrystalAbsorbedSound;
+	[Tooltip("Tempo em segundos que demora para o som começar a tocar")]public float CrystalAbsorbedSoundDelay;
+
+
 	private int currentLevel = -1;
 
 	void Start () {
