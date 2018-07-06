@@ -14,6 +14,8 @@ public class NewArcherScript : MonoBehaviour
     [Tooltip("Here is the BowRelease. From this point that the arrow will instantiate")] public GameObject BowRelease;
     [Tooltip("Here is the FOVCollider. This is the Field of View of the Archer")] public Collider2D FOVCollider;
 
+    [HideInInspector]public bool _isDead = false;
+
     private bool _canShoot = false;
     private Transform _playerTransform;
     private Transform _middleLayerTransform;
@@ -124,43 +126,54 @@ public class NewArcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(state);
-        if (state == State.LockOn)
+        if (!_isDead)
         {
-            // This makes the enemy look at the player
-            if (transform.rotation.z <= MaxLookRotation/2 && transform.rotation.z >= -MaxLookRotation/2)
+            if (state == State.LockOn)
             {
-                Vector3 diff = _playerTransform.position - transform.position;
-                diff.Normalize();
-                float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Clamp(rot_z, -MaxLookRotation/2, MaxLookRotation/2));
-            }
+                // This makes the enemy look at the player
+                if (transform.rotation.z <= MaxLookRotation / 2 && transform.rotation.z >= -MaxLookRotation / 2)
+                {
+                    Vector3 diff = _playerTransform.position - transform.position;
+                    diff.Normalize();
+                    float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Clamp(rot_z, -MaxLookRotation / 2, MaxLookRotation / 2));
+                }
 
-            StartCoroutine(LockOnCoroutine());
-        }
-        if (state == State.Shooting)
-        {
-            if (_canShoot)
-            {
-                Debug.Log("Gonna Shoot");
-                Shoot();
-                Debug.Log("Already shot");
+                StartCoroutine(LockOnCoroutine());
             }
-            state = State.Cooldown;
+            if (state == State.Shooting)
+            {
+                if (_canShoot)
+                {
+                    Shoot();
+                }
+                state = State.Cooldown;
+            }
+            if (state == State.Cooldown)
+            {
+                StartCoroutine(CooldownCoroutine());
+            }
         }
-        if (state == State.Cooldown)
+        else
         {
-            StartCoroutine(CooldownCoroutine());
+            if (state == State.Dead)
+            {
+                StopAllCoroutines();
+            }
         }
+
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (state == State.Idle)
+        if (!_isDead)
         {
-            if (other.CompareTag("Player"))
+            if (state == State.Idle)
             {
-                state = State.LockOn;
+                if (other.CompareTag("Player"))
+                {
+                    state = State.LockOn;
+                }
             }
         }
     }
