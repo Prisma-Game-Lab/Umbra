@@ -98,14 +98,15 @@ public class NewArcherScript : MonoBehaviour
 
     IEnumerator CooldownCoroutine()
     {
+        _canShoot = false;
         yield return new WaitForSeconds(Cooldown);
         state = State.Idle;
     }
 
     IEnumerator LockOnCoroutine()
     {
-        yield return new WaitForSeconds(LockOnTimer);
         _canShoot = true;
+        yield return new WaitForSeconds(LockOnTimer);
         state = State.Shooting;
     }
 
@@ -113,7 +114,6 @@ public class NewArcherScript : MonoBehaviour
     {
         Instantiate<GameObject>(ArrowPrefab, BowRelease.transform.position, BowRelease.transform.rotation, _middleLayerTransform);
         LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
-        _canShoot = false;
     }
 
     private void Start()
@@ -124,15 +124,16 @@ public class NewArcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(state);
         if (state == State.LockOn)
         {
             // This makes the enemy look at the player
-            if (transform.rotation.z <= MaxLookRotation && transform.rotation.z >= -MaxLookRotation)
+            if (transform.rotation.z <= MaxLookRotation/2 && transform.rotation.z >= -MaxLookRotation/2)
             {
                 Vector3 diff = _playerTransform.position - transform.position;
                 diff.Normalize();
                 float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation));
+                transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Clamp(rot_z, -MaxLookRotation/2, MaxLookRotation/2));
             }
 
             StartCoroutine(LockOnCoroutine());
@@ -143,7 +144,6 @@ public class NewArcherScript : MonoBehaviour
             {
                 Debug.Log("Gonna Shoot");
                 Shoot();
-                _canShoot = false;
                 Debug.Log("Already shot");
             }
             state = State.Cooldown;
