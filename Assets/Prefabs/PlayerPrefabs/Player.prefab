@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 61780662379730354}
   - component: {fileID: 114254695894668442}
   - component: {fileID: 114328992605814162}
+  - component: {fileID: 50188036007197540}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -66,13 +67,33 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.38, y: 0.05, z: -5.3828125}
+  m_LocalPosition: {x: -19.59, y: 0.27, z: -5.1914062}
   m_LocalScale: {x: 0.68, y: 0.68, z: 0.68}
   m_Children:
   - {fileID: 4142365458135400}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50188036007197540
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414802952041264}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61780662379730354
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -130,7 +151,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   HookPrefab: {fileID: 1715237323022502, guid: 71e70a5ceaca3ad49977126e0ba2d084, type: 2}
-  hookGo: {fileID: 0}
 --- !u!114 &114328992605814162
 MonoBehaviour:
   m_ObjectHideFlags: 1

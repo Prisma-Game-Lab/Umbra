@@ -66,7 +66,7 @@ public class LoseColorOnHookScript : MonoBehaviour {
 
 		//Som
 		if (transform.parent.tag == "Crystal") {
-			LevelManager.Instance.CrystalAbsorbedSound.PlayDelayed (LevelManager.Instance.CrystalAbsorbedSoundDelay);
+			LevelManager.Instance.CrystalAbsorbedSound.PlayDelayed(LevelManager.Instance.CrystalAbsorbedSoundDelay);
 		}
 	}
 
