@@ -227,7 +227,7 @@ MonoBehaviour:
     type: 2}
   BowRelease: {fileID: 1980376785507008}
   FOVCollider: {fileID: 60418122090212414}
-  state: 0
+  state: 1
 --- !u!212 &212781771547983314
 SpriteRenderer:
   m_ObjectHideFlags: 1
