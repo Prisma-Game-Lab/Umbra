@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class LevelManager : Singleton<LevelManager> {
+public class LevelManager : Singleton<LevelManager>
+{
 
-	public int PlayerLayer;
-	public string MenuSceneName;
-	public string[] SceneNames;
+    public int PlayerLayer;
+    public string FirstLevelSceneName;
+    public string[] SceneNames;
     private Animator animator;
     
 
@@ -44,77 +46,90 @@ public class LevelManager : Singleton<LevelManager> {
 
 	private int currentLevel = -1;
 
-	void Start () {
-		// Finds the scene that is currently being played and set current level to it.
-		string currentSceneName = SceneManager.GetActiveScene().name;
-		for (int i = 0; i < this.SceneNames.Length; i++) {
-			if(currentSceneName == this.SceneNames[i]) {
-				// If found the scene, set the current level to it.
-				this.currentLevel = i;
-				break;
-			}
-		}
-	}
-	
-	void Update () {
-		if (animator == null) {
-			// Finds the animator on canvas
-			animator = GameObject.Find("Canvas").GetComponent<Animator>();
-		}
+    void Start()
+    {
+        // Finds the scene that is currently being played and set current level to it.
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        for (int i = 0; i < this.SceneNames.Length; i++)
+        {
+            if (currentSceneName == this.SceneNames[i])
+            {
+                // If found the scene, set the current level to it.
+                this.currentLevel = i;
+                break;
+            }
+        }
+        
 
-		if (Input.GetKeyDown(KeyBindings.Instance.GameFlowReloadScene))
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
-	}
+    }
 
-	public void GoToLevel(int level)
-	{
-		if(level < SceneNames.Length && level >= 0)
-		{
-			currentLevel = level;
-			SceneManager.LoadScene(SceneNames[level]);
-		}
-		else if(level == -1)
-		{
-			currentLevel = -1;
-			SceneManager.LoadScene(MenuSceneName);
-		}
-		else
-		{
-			Debug.LogError("LevelManager attempted to go to a level that does not exit. Level = " + level);
-		}
-	}
+    void Update()
+    {
+        if (animator == null)
+        {
+            // Finds the animator on canvas
+            animator = GameObject.Find("Canvas").GetComponent<Animator>();
+        }
 
-	public void GoToNextLevel()
-	{
-		FadeToLevel();
-	}
+        if (Input.GetKeyDown(KeyBindings.Instance.GameFlowReloadScene))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
-	//Define o que ocorre ao final da animação de FadeOut. Chamada pela mesma.
-	public void OnFadeOutEnd(){
-		if(currentLevel + 1 < SceneNames.Length)
-		{
-			GoToLevel(currentLevel + 1);
+        
+    }
+
+    public void GoToLevel(int level)
+    {
+        if (level < SceneNames.Length && level >= 0)
+        {
+            currentLevel = level;
+            SceneManager.LoadScene(SceneNames[level]);
+        }
+        else if (level == -1)
+        {
+            currentLevel = -1;
+            SceneManager.LoadScene(FirstLevelSceneName);
+            
+
+        }
+        else
+        {
+            Debug.LogError("LevelManager attempted to go to a level that does not exit. Level = " + level);
+        }
+    }
+
+    public void GoToNextLevel()
+    {
+        FadeToLevel();
+        
+    }
+
+    //Define o que ocorre ao final da animação de FadeOut. Chamada pela mesma.
+    public void OnFadeOutEnd()
+    {
+        if (currentLevel + 1 < SceneNames.Length)
+        {
+            GoToLevel(currentLevel + 1);
 
 
-		}
-		else
-		{
-			GoToLevel(-1);
+        }
+        else
+        {
+            GoToLevel(-1);
 
-		}
-	}
+        }
+    }
 
-	public void ResetLevel()
-	{
-		GoToLevel(currentLevel);
-	}
+    public void ResetLevel()
+    {
+        GoToLevel(currentLevel);
+    }
 
     public void FadeToLevel()
     {
-		animator.SetTrigger ("FadeOut");
+        animator.SetTrigger("FadeOut");
     }
 
-    
+
 }
