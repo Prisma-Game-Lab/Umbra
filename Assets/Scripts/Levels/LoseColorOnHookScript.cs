@@ -63,6 +63,11 @@ public class LoseColorOnHookScript : MonoBehaviour {
 		this._hasStartedColorAnimation = true;
 		this._colorAnimationTime = 0.0f;
 		this._color = this.TargetSpriteRenderer.color;
+
+		//Som
+		if (transform.parent.tag == "Crystal") {
+			LevelManager.Instance.CrystalAbsorbedSound.PlayDelayed(LevelManager.Instance.CrystalAbsorbedSoundDelay);
+		}
 	}
 
 	private void onAnimationFinish() {
