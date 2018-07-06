@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerLayer: 8
-  MenuSceneName: MainMenu
+  FirstLevelSceneName: Intro_00
   SceneNames:
   - Intro_00
   - Intro_01
@@ -1625,7 +1625,7 @@ MonoBehaviour:
   - Zone00_02
   - Zone00_03
   - Zone00_04
-  animator: {fileID: 95623449589876394, guid: 7167c3856e5ef4144bc771c84e601ad9, type: 2}
+  text: {fileID: 114833926696625634, guid: 234c2120185ffa94e82893aebfbfb464, type: 2}
   HookGo: {fileID: 82998856947101052}
   HookGoDelay: 0
   HookHitLevel: {fileID: 82285189468720908}
