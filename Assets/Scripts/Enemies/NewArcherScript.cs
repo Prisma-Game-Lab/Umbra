@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class NewArcherScript : MonoBehaviour
 {
+    /*
+    [Header("Appearence")]
+    [Tooltip("Flip the archer")] public bool Flip = false;
+    */
+
     [Header("Values")]
     [Tooltip("Cooldown after shooting")] [Range(0.1f, 5.0f)] public float Cooldown = 1;      // Cooldown after shooting
     [Tooltip("Timer after Lock-on to Player")] [Range(0.1f, 5.0f)] public float LockOnTimer = 1;   // Time after Lock-on to player
-    [Tooltip("Max Look Rotation of the archer")] [Range(0f, 180f)] public float MaxLookRotation = 90;   // Time after Lock-on to player
+    [Tooltip("Max Look Rotation of the archer")] [Range(0f, 90f)] public float MaxLookRotation = 45;   // Time after Lock-on to player
 
     [Header("Things to drag here")]
     [Tooltip("Here is the arrow prefab. With this we can instantiate the arrow")] public GameObject ArrowPrefab;
     [Tooltip("Here is the BowRelease. From this point that the arrow will instantiate")] public GameObject BowRelease;
     [Tooltip("Here is the FOVCollider. This is the Field of View of the Archer")] public Collider2D FOVCollider;
 
-    [HideInInspector]public bool _isDead = false;
+    [HideInInspector]public bool IsDead = false;
 
     private bool _canShoot = false;
     private Transform _playerTransform;
     private Transform _middleLayerTransform;
     private Quaternion _ArrowRotation;
-
+    private float _ArcherYRotation = 0;
 
     #region State
     // Here you name the states
@@ -126,17 +131,25 @@ public class NewArcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isDead)
+        /*
+        if (Flip)
+            _ArcherYRotation = 180;
+        else if (!Flip)
+            _ArcherYRotation = 0;
+            */
+
+        if (!IsDead)
         {
             if (state == State.LockOn)
             {
                 // This makes the enemy look at the player
-                if (transform.rotation.z <= MaxLookRotation / 2 && transform.rotation.z >= -MaxLookRotation / 2)
+                if (transform.rotation.z <= MaxLookRotation && transform.rotation.z >= -MaxLookRotation)
                 {
                     Vector3 diff = _playerTransform.position - transform.position;
                     diff.Normalize();
                     float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Clamp(rot_z, -MaxLookRotation / 2, MaxLookRotation / 2));
+                    Debug.Log(this.gameObject.transform.rotation.y);
                 }
 
                 StartCoroutine(LockOnCoroutine());
@@ -166,7 +179,7 @@ public class NewArcherScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!_isDead)
+        if (!IsDead)
         {
             if (state == State.Idle)
             {
@@ -177,5 +190,4 @@ public class NewArcherScript : MonoBehaviour
             }
         }
     }
-
 }
