@@ -9,7 +9,7 @@ public class NewArcherScript : MonoBehaviour
     [Tooltip("Timer after Lock-on to Player")] [Range(0.1f, 5.0f)] public float LockOnTimer = 1;
     [Tooltip("Max Look Rotation of the archer")] [Range(0f, 90f)] public float MaxLookRotation = 45;
     [Tooltip("Speed for the rotation to look at player")] [Range(0.1f, 100.0f)] public float RotationSpeed = 15;
-
+    [Space]
     [Header("Things to drag here")]
     [Tooltip("Here is the arrow prefab. With this we can instantiate the arrow")] public GameObject ArrowPrefab;
     [Tooltip("Here is the BowRelease. From this point that the arrow will instantiate")] public GameObject BowRelease;
@@ -22,6 +22,7 @@ public class NewArcherScript : MonoBehaviour
     private Transform _middleLayerTransform;
     private Quaternion _ArrowRotation;
     private float _ArcherYRotation = 0;
+    private Vector3 _startingAngle;
     private Vector3 _currentAngle;
     private Vector3 _targetAngle;
 
@@ -115,42 +116,61 @@ public class NewArcherScript : MonoBehaviour
         state = State.Shooting;
     }
 
-    private void Shoot()
+    private void Shoot()        // Function to instantiate the arrow
     {
         Instantiate<GameObject>(ArrowPrefab, BowRelease.transform.position, BowRelease.transform.rotation, _middleLayerTransform);
         LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
+    }
+
+    private void LookAtLarp(Vector3 rotTarget)   // Function to make the Archer look at the Player
+    {
+        //Vector3 diff = _playerTransform.position - transform.position;
+        //diff.Normalize();
+        //float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+        _currentAngle = transform.eulerAngles;
+        //_targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation));
+
+        _currentAngle = new Vector3(
+            Mathf.LerpAngle(_currentAngle.x, rotTarget.x, Time.deltaTime),                       // Maintains the X axis without rotating
+            Mathf.LerpAngle(_currentAngle.y, rotTarget.y, Time.deltaTime),                       // Maintains the Y axis without rotating
+            Mathf.LerpAngle(_currentAngle.z, rotTarget.z, Time.deltaTime * RotationSpeed));      // Rotates only the Z axis
+
+        this.transform.eulerAngles = _currentAngle;         // Here is where GameObject is rotated
     }
 
     private void Start()
     {
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         _middleLayerTransform = _playerTransform.parent;
+        _startingAngle = this.transform.eulerAngles;
     }
 
     private void FixedUpdate()
     {
         if (!IsDead)
         {
-            if (state == State.LockOn)      // This makes the enemy look at the player
+            if(state == State.Idle)
             {
+                LookAtLarp(_startingAngle);
+            }
+            if (state == State.LockOn)
+            {
+                //if (this.transform.rotation.y == 0)
+                //    if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
+                //        LookAtLarp();
+                //else if (this.transform.rotation.y == 180)
+                //    if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
+                //        LookAtLarp();
+
+                Vector3 diff = _playerTransform.position - transform.position;
+                diff.Normalize();
+                float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
                 if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
-                {
-                    Vector3 diff = _playerTransform.position - transform.position;
-                    diff.Normalize();
-                    float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+                    LookAtLarp(new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation)));
 
-                    _currentAngle = transform.eulerAngles;
-                    _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation));
-
-                    _currentAngle = new Vector3(
-                        Mathf.LerpAngle(_currentAngle.x, _targetAngle.x, Time.deltaTime),
-                        Mathf.LerpAngle(_currentAngle.y, _targetAngle.y, Time.deltaTime),
-                        Mathf.LerpAngle(_currentAngle.z, _targetAngle.z, Time.deltaTime * RotationSpeed));
-
-                    this.transform.eulerAngles = _currentAngle;
-                }
-
-                //StartCoroutine(LockOnCoroutine());
+                StartCoroutine(LockOnCoroutine());
             }
             if (state == State.Shooting)
             {
