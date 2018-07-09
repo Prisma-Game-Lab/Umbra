@@ -9,6 +9,7 @@ public class LoseColorOnHookScript : MonoBehaviour {
 	public List<GameObject> ObjectsToTurnOff;
 
 	public bool ShouldSetThisToUnseen = true;
+    public CameraShake cameraShake;
 
 	[Header("Layer Info")]
   public LayerMask HookLayer;
@@ -28,6 +29,11 @@ public class LoseColorOnHookScript : MonoBehaviour {
 		this._collider = this.GetComponent<BoxCollider2D>();
 		this._hasStartedColorAnimation = false;
 		this._hasEndedColorAnimation = false;
+
+		//Seta automaticamente cameraShake
+		if (cameraShake == null) {
+			cameraShake = GameObject.Find("Camera").GetComponent<CameraShake>();
+		}
 	}
 	
 	// Update is called once per frame
@@ -63,9 +69,10 @@ public class LoseColorOnHookScript : MonoBehaviour {
 		this._hasStartedColorAnimation = true;
 		this._colorAnimationTime = 0.0f;
 		this._color = this.TargetSpriteRenderer.color;
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
 
-		//Som
-		if (transform.parent.tag == "Crystal") {
+        //Som
+        if (transform.parent.tag == "Crystal") {
 			LevelManager.Instance.CrystalAbsorbedSound.PlayDelayed(LevelManager.Instance.CrystalAbsorbedSoundDelay);
 		}
 	}
