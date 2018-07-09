@@ -18,6 +18,7 @@ public class NewArcherScript : MonoBehaviour
     [HideInInspector] public bool IsDead = false;
 
     private bool _canShoot = false;
+    private bool _playerInSight = false;
     private Transform _playerTransform;
     private Transform _middleLayerTransform;
     private Quaternion _ArrowRotation;
@@ -26,7 +27,7 @@ public class NewArcherScript : MonoBehaviour
     private Vector3 _currentAngle;
     private Vector3 _targetAngle;
 
-    #region State
+    #region StateMachine
     // Here you name the states
     public enum State
     {
@@ -102,14 +103,14 @@ public class NewArcherScript : MonoBehaviour
      * Dead
     */
 
-    IEnumerator CooldownCoroutine()
+    IEnumerator CooldownCoroutine()         // The coroutine to the cooldown after shooting the arror
     {
         _canShoot = false;
         yield return new WaitForSeconds(Cooldown);
         state = State.Idle;
     }
 
-    IEnumerator LockOnCoroutine()
+    IEnumerator LockOnCoroutine()           // The time it takes to lock on the target
     {
         _canShoot = true;
         yield return new WaitForSeconds(LockOnTimer);
@@ -118,18 +119,17 @@ public class NewArcherScript : MonoBehaviour
 
     private void Shoot()        // Function to instantiate the arrow
     {
-        Instantiate<GameObject>(ArrowPrefab, BowRelease.transform.position, BowRelease.transform.rotation, _middleLayerTransform);
+        Instantiate<GameObject>(
+            ArrowPrefab,                            // The Prefab to instantiate
+            BowRelease.transform.position,          // The Position to instantiate the Prefab
+            BowRelease.transform.rotation,          // The Rotation to instantiate the Prefab
+            _middleLayerTransform);                 // The position in the Hierarchy to instantiate the Prefab
         LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
     }
 
     private void LookAtLarp(Vector3 rotTarget)   // Function to make the Archer look at the Player
     {
-        //Vector3 diff = _playerTransform.position - transform.position;
-        //diff.Normalize();
-        //float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-
         _currentAngle = transform.eulerAngles;
-        //_targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation));
 
         _currentAngle = new Vector3(
             Mathf.LerpAngle(_currentAngle.x, rotTarget.x, Time.deltaTime),                       // Maintains the X axis without rotating
@@ -148,39 +148,32 @@ public class NewArcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!IsDead)
+        if (!IsDead)        // Check if dead
         {
-            if(state == State.Idle)
+            if (state == State.Idle)        // Check if correct state
             {
                 LookAtLarp(_startingAngle);
             }
-            if (state == State.LockOn)
+            if (state == State.LockOn)      // Check if correct state
             {
-                //if (this.transform.rotation.y == 0)
-                //    if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
-                //        LookAtLarp();
-                //else if (this.transform.rotation.y == 180)
-                //    if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
-                //        LookAtLarp();
-
                 Vector3 diff = _playerTransform.position - transform.position;
                 diff.Normalize();
                 float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
-                if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
-                    LookAtLarp(new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation)));
+                _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation));
+
+                if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)  // Limit the look rotation
+                    LookAtLarp(_targetAngle);
 
                 StartCoroutine(LockOnCoroutine());
             }
-            if (state == State.Shooting)
+            if (state == State.Shooting)        // Check if correct state
             {
                 if (_canShoot)
-                {
                     Shoot();
-                }
-                state = State.Cooldown;
+                state = State.Cooldown;       // Change the state
             }
-            if (state == State.Cooldown)
+            if (state == State.Cooldown)        // Check if correct state
             {
                 StartCoroutine(CooldownCoroutine());
             }
@@ -188,24 +181,16 @@ public class NewArcherScript : MonoBehaviour
         else
         {
             if (state == State.Dead)
-            {
                 StopAllCoroutines();
-            }
         }
 
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!IsDead)
-        {
-            if (state == State.Idle)
-            {
-                if (other.CompareTag("Player"))
-                {
-                    state = State.LockOn;
-                }
-            }
-        }
+        if (!IsDead)        // Check if dead
+            if (state == State.Idle)        // Check if correct state
+                if (other.CompareTag("Player"))     // Check if it's the Player that's inside the F.O.V.
+                    state = State.LockOn;       // Change the state
     }
 }
