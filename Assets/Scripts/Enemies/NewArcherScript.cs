@@ -127,7 +127,7 @@ public class NewArcherScript : MonoBehaviour
         LevelManager.Instance.ArcherAttackSound.PlayDelayed(LevelManager.Instance.ArcherAttackSoundDelay);
     }
 
-    private void RotateLarp(Vector3 rotTarget)   // Function to make the Archer look at the Player
+    private void LookAtLarp(Vector3 rotTarget)   // Function to make the Archer look at the Player
     {
         _currentAngle = transform.eulerAngles;
 
@@ -137,30 +137,6 @@ public class NewArcherScript : MonoBehaviour
             Mathf.LerpAngle(_currentAngle.z, rotTarget.z, Time.deltaTime * RotationSpeed));      // Rotates only the Z axis
 
         this.transform.eulerAngles = _currentAngle;         // Here is where GameObject is rotated
-    }
-
-    private void WhereToLook(float rotationValue, bool NE, bool NW, bool SE, bool SW)
-    {
-        if (rotationValue >= 0 && rotationValue <= 90 && NE == true)              // Positive-Right sector
-        {
-            _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rotationValue, 0, MaxLookRotation));
-            RotateLarp(_targetAngle);
-        }
-        else if (rotationValue > 90 && rotationValue <= 180 && NW == true)        // Positive-Left sector
-        {
-            _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rotationValue - 90, 180 - MaxLookRotation, 180));
-            RotateLarp(_targetAngle);
-        }
-        else if (rotationValue >= -90 && rotationValue < 0 && SE == true)         // Negative-Right sector
-        {
-            _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rotationValue, -MaxLookRotation, 0));
-            RotateLarp(_targetAngle);
-        }
-        else if (rotationValue >= -180 && rotationValue < -90 && SW == true)      // Negative-Left sector
-        {
-            _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rotationValue + 90, -(180 - MaxLookRotation), -90));
-            RotateLarp(_targetAngle);
-        }
     }
 
     private void Start()
@@ -189,12 +165,12 @@ public class NewArcherScript : MonoBehaviour
                     if (rot_z >= 0 && rot_z <= 90)              // Positive-Right sector
                     {
                         _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, 0, MaxLookRotation));
-                        RotateLarp(_targetAngle);
+                        LookAtLarp(_targetAngle);
                     }
                     else if (rot_z >= -90 && rot_z < 0)         // Negative-Right sector
                     {
                         _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, 0));
-                        RotateLarp(_targetAngle);
+                        LookAtLarp(_targetAngle);
                     }
                 }
                 else
@@ -202,12 +178,12 @@ public class NewArcherScript : MonoBehaviour
                     if (rot_z > 90 && rot_z <= 180)        // Positive-Left sector
                     {
                         _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(180 - rot_z, 0, MaxLookRotation));
-                        RotateLarp(_targetAngle);
+                        LookAtLarp(_targetAngle);
                     }
                     else if (rot_z >= -180 && rot_z < -90)      // Negative-Left sector
                     {
                         _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(-(180 - rot_z), -MaxLookRotation, 0));
-                        RotateLarp(_targetAngle);
+                        LookAtLarp(_targetAngle);
                     }
                 }
 
