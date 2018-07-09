@@ -67,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.59, y: 0.27, z: -5.1914062}
-  m_LocalScale: {x: 0.68, y: 0.68, z: 0.68}
+  m_LocalPosition: {x: -8.035, y: -1.461, z: 32.620003}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4142365458135400}
   m_Father: {fileID: 0}
@@ -117,7 +117,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 2}
+  m_Size: {x: 0.5, y: 1.42}
   m_EdgeRadius: 0
 --- !u!114 &114254695894668442
 MonoBehaviour:
@@ -133,14 +133,14 @@ MonoBehaviour:
   ShadowSpriteRenderer: {fileID: 212222239810936778}
   PauseScript: {fileID: 0}
   Gravity: 60
-  Speed: 10
+  Speed: 8
   Acceleration: 90
-  JumpHeight: 12
+  JumpHeight: 15
   NumJumps: 2
   HookLaunchSpeed: 30
   HookPullSpeed: 40
-  HookPullFinishDistance: 2
-  HookMaxDistance: 15.69
+  HookPullFinishDistance: 1.5
+  HookMaxDistance: 5
   HookCollisionLayerMask:
     serializedVersion: 2
     m_Bits: 8192
