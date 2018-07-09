@@ -82,15 +82,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580106371535238}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 7.23, y: 0.44, z: 9.26}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.11, y: -3.78, z: -0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4889121584042228}
   - {fileID: 4561331959850470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4889121584042228
 Transform:
   m_ObjectHideFlags: 1
@@ -136,7 +136,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08, y: 0.41}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -222,11 +222,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cooldown: 1
   LockOnTimer: 1
-  MaxLookRotation: 90
+  MaxLookRotation: 45
+  RotationSpeed: 15
   ArrowPrefab: {fileID: 1744517239873704, guid: 673a2d56822b6da4b806a1d6271e09dd,
     type: 2}
   BowRelease: {fileID: 1980376785507008}
   FOVCollider: {fileID: 60418122090212414}
+<<<<<<< HEAD
+=======
+  IsDead: 0
+>>>>>>> d8bf1fb02c9bd68660058244860dbbc57e78f21a
   state: 0
 --- !u!212 &212781771547983314
 SpriteRenderer:
@@ -264,7 +269,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 75037253c9108394bacbfdff866325d4, type: 3}
-  m_Color: {r: 0, g: 0.61960787, b: 0.3764706, a: 1}
+  m_Color: {r: 0.5411765, g: 0.6039216, b: 0.35686275, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
