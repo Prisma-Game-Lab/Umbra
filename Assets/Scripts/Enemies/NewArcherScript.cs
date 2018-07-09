@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class NewArcherScript : MonoBehaviour
 {
-    /*
-    [Header("Appearence")]
-    [Tooltip("Flip the archer")] public bool Flip = false;
-    */
-
     [Header("Values")]
-    [Tooltip("Cooldown after shooting")] [Range(0.1f, 5.0f)] public float Cooldown = 1;      // Cooldown after shooting
-    [Tooltip("Timer after Lock-on to Player")] [Range(0.1f, 5.0f)] public float LockOnTimer = 1;   // Time after Lock-on to player
-    [Tooltip("Max Look Rotation of the archer")] [Range(0f, 90f)] public float MaxLookRotation = 45;   // Time after Lock-on to player
+    [Tooltip("Cooldown after shooting")] [Range(0.1f, 5.0f)] public float Cooldown = 1;
+    [Tooltip("Timer after Lock-on to Player")] [Range(0.1f, 5.0f)] public float LockOnTimer = 1;
+    [Tooltip("Max Look Rotation of the archer")] [Range(0f, 90f)] public float MaxLookRotation = 45;
+    [Tooltip("Speed for the rotation to look at player")] [Range(0.1f, 100.0f)] public float RotationSpeed = 15;
 
     [Header("Things to drag here")]
     [Tooltip("Here is the arrow prefab. With this we can instantiate the arrow")] public GameObject ArrowPrefab;
     [Tooltip("Here is the BowRelease. From this point that the arrow will instantiate")] public GameObject BowRelease;
     [Tooltip("Here is the FOVCollider. This is the Field of View of the Archer")] public Collider2D FOVCollider;
 
-    [HideInInspector]public bool IsDead = false;
+    [HideInInspector] public bool IsDead = false;
 
     private bool _canShoot = false;
     private Transform _playerTransform;
     private Transform _middleLayerTransform;
     private Quaternion _ArrowRotation;
     private float _ArcherYRotation = 0;
+    private Vector3 _currentAngle;
+    private Vector3 _targetAngle;
 
     #region State
     // Here you name the states
@@ -131,28 +129,28 @@ public class NewArcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*
-        if (Flip)
-            _ArcherYRotation = 180;
-        else if (!Flip)
-            _ArcherYRotation = 0;
-            */
-
         if (!IsDead)
         {
-            if (state == State.LockOn)
+            if (state == State.LockOn)      // This makes the enemy look at the player
             {
-                // This makes the enemy look at the player
-                if (transform.rotation.z <= MaxLookRotation && transform.rotation.z >= -MaxLookRotation)
+                if (this.transform.rotation.z <= MaxLookRotation && this.transform.rotation.z >= -MaxLookRotation)
                 {
                     Vector3 diff = _playerTransform.position - transform.position;
                     diff.Normalize();
                     float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Clamp(rot_z, -MaxLookRotation / 2, MaxLookRotation / 2));
-                    Debug.Log(this.gameObject.transform.rotation.y);
+
+                    _currentAngle = transform.eulerAngles;
+                    _targetAngle = new Vector3(_currentAngle.x, _currentAngle.y, Mathf.Clamp(rot_z, -MaxLookRotation, MaxLookRotation));
+
+                    _currentAngle = new Vector3(
+                        Mathf.LerpAngle(_currentAngle.x, _targetAngle.x, Time.deltaTime),
+                        Mathf.LerpAngle(_currentAngle.y, _targetAngle.y, Time.deltaTime),
+                        Mathf.LerpAngle(_currentAngle.z, _targetAngle.z, Time.deltaTime * RotationSpeed));
+
+                    this.transform.eulerAngles = _currentAngle;
                 }
 
-                StartCoroutine(LockOnCoroutine());
+                //StartCoroutine(LockOnCoroutine());
             }
             if (state == State.Shooting)
             {

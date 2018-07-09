@@ -28,7 +28,7 @@ public class Arrow : MonoBehaviour
 
         if (col.gameObject.CompareTag("Player"))  // Check if hit player
         {
-            GetComponentInParent<ArcherShot>()._hasHit = true;  // Stops Archer of shooting
+            //GetComponentInParent<ArcherShot>()._hasHit = true;  // Stops Archer of shooting
             Destroy(this.gameObject);  // Destroy Arrow
         }
     }
