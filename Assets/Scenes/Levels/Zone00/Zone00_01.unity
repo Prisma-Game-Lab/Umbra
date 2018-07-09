@@ -146,6 +146,12 @@ Transform:
   m_Father: {fileID: 577531112}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49957012 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114084268408142396, guid: 17decf11c47caa94aadbe83d362151d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 730835140}
+  m_Script: {fileID: 11500000, guid: f338a5605abaab446adef59948871b20, type: 3}
 --- !u!1 &60383913
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +820,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114726729895242632, guid: be66c3d9931c638409a79f629e1769bc,
+        type: 2}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 49957012}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be66c3d9931c638409a79f629e1769bc, type: 2}
   m_IsPrefabParent: 0
