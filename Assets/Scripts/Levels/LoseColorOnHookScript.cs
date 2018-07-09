@@ -29,6 +29,11 @@ public class LoseColorOnHookScript : MonoBehaviour {
 		this._collider = this.GetComponent<BoxCollider2D>();
 		this._hasStartedColorAnimation = false;
 		this._hasEndedColorAnimation = false;
+
+		//Seta automaticamente cameraShake
+		if (cameraShake == null) {
+			cameraShake = GameObject.Find("Camera").GetComponent<CameraShake>();
+		}
 	}
 	
 	// Update is called once per frame
