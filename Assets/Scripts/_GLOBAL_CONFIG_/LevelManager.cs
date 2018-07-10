@@ -43,6 +43,11 @@ public class LevelManager : Singleton<LevelManager>
 	[Tooltip("Som que toca quando o cristal é absorvido")] public AudioSource CrystalAbsorbedSound;
 	[Tooltip("Tempo em segundos que demora para o som começar a tocar")]public float CrystalAbsorbedSoundDelay;
 
+	[Header("Música de Fundo")]
+	[Tooltip("AudioSource que guarda a música de fundo")] public AudioSource BackgroundMusicSound;
+	[Tooltip("AudioSource que guarda a ambientação que fica constante")] public AudioSource ConstantAmbientSound;
+	[Tooltip("AudioSource que guarda a ambientação que aumenta progressivamente")] public AudioSource ProgressiveAmbientSound;
+
 
 	private int currentLevel = -1;
 
