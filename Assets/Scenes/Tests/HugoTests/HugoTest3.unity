@@ -1031,11 +1031,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4839197053007958, guid: 68f6eaef01a76b64ea3f2170da9c7bf8,
     type: 2}
   m_PrefabInternal: {fileID: 165840886}
---- !u!198 &971205850 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198473411017493328, guid: 60955081f314e79489eaff6dbc9416a2,
-    type: 2}
-  m_PrefabInternal: {fileID: 2002097597}
 --- !u!1001 &1029975479
 Prefab:
   m_ObjectHideFlags: 0
@@ -1574,11 +1569,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be66c3d9931c638409a79f629e1769bc, type: 2}
   m_IsPrefabParent: 0
---- !u!198 &1511973335 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198555290127990140, guid: 60955081f314e79489eaff6dbc9416a2,
-    type: 2}
-  m_PrefabInternal: {fileID: 2002097597}
 --- !u!1 &1550218663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,11 +1984,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 577531112}
     m_Modifications:
-    - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: SmokeParticles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4671831355841804, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.8
@@ -2031,33 +2016,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 4103943047474828, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4624462033791134, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775813472924660, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: SmokeParticles.Array.data[0]
-      value: 
-      objectReference: {fileID: 1511973335}
-    - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: SmokeParticles.Array.data[1]
-      value: 
-      objectReference: {fileID: 2070249621}
-    - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: SmokeParticles.Array.data[2]
-      value: 
-      objectReference: {fileID: 971205850}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
@@ -2066,8 +2024,3 @@ Transform:
   m_PrefabParentObject: {fileID: 4034317316380228, guid: 21c8bad8c3378af41ac69342914b1e9a,
     type: 2}
   m_PrefabInternal: {fileID: 1838135859}
---- !u!198 &2070249621 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198719232251827822, guid: 60955081f314e79489eaff6dbc9416a2,
-    type: 2}
-  m_PrefabInternal: {fileID: 2002097597}

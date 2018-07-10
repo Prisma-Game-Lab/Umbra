@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(PlayerPhysics))]
 public class PlayerController : MonoBehaviour
@@ -213,7 +215,9 @@ public class PlayerController : MonoBehaviour
 
             foreach (ParticleSystem item in SmokeParticles)
             {
-                item.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+                ParticleSystem ps = item;
+                var fo = ps.forceOverLifetime;
+                fo.xMultiplier = -5;
             }
         }
         else if(_amountToMove.x < 0)
@@ -223,7 +227,9 @@ public class PlayerController : MonoBehaviour
 
             foreach (ParticleSystem item in SmokeParticles)
             {
-                item.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                ParticleSystem ps = item;
+                var fo = ps.forceOverLifetime;
+                fo.xMultiplier = 5;
             }
         }
 
