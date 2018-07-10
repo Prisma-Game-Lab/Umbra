@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask EnemyCollisionLayerMask;
 
     public GameObject HookPrefab;
+
+    public ParticleSystem[] SmokeParticles;
     #endregion
 
     #region Private
@@ -208,11 +210,21 @@ public class PlayerController : MonoBehaviour
         {
             mySpriteRenderer.flipX = true;
             ShadowSpriteRenderer.flipX = true;
+
+            foreach (ParticleSystem item in SmokeParticles)
+            {
+                item.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+            }
         }
         else if(_amountToMove.x < 0)
         {
             mySpriteRenderer.flipX = false;
             ShadowSpriteRenderer.flipX = false;
+
+            foreach (ParticleSystem item in SmokeParticles)
+            {
+                item.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            }
         }
 
         _playerPhysics.Move(_amountToMove * Time.deltaTime);

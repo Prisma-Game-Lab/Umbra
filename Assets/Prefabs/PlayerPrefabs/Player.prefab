@@ -244,6 +244,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   HookPrefab: {fileID: 1715237323022502, guid: 71e70a5ceaca3ad49977126e0ba2d084, type: 2}
+  SmokeParticles: []
 --- !u!114 &114328992605814162
 MonoBehaviour:
   m_ObjectHideFlags: 1
