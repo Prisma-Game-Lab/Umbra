@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224455915860638854}
   - component: {fileID: 114047667334191228}
+  - component: {fileID: 114173954215265694}
   m_Layer: 5
   m_Name: SoundTransitionManager
   m_TagString: Untagged
@@ -38,7 +39,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf27ee7f219f6f41a1c0e03b1a93e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShouldChangeMusic: 0
   BGMusic: {fileID: 0}
+--- !u!114 &114173954215265694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445426984999502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe17d3bbfbd97048b806eecb3d45cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldChangeVolume: 0
+  NewVolume: 0
 --- !u!224 &224455915860638854
 RectTransform:
   m_ObjectHideFlags: 1
