@@ -333,12 +333,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc631f5931b11d4469f7982fc7d693f9, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &211453769 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114021606961395340, guid: bc631f5931b11d4469f7982fc7d693f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 211453768}
-  m_Script: {fileID: 11500000, guid: ee1a665310f93f647a13edfd2437a11f, type: 3}
 --- !u!4 &288345989 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4014487110094374, guid: a12b790a84b99ef4385f6f8b406a80c9,
@@ -2037,11 +2031,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: PauseScript
-      value: 
-      objectReference: {fileID: 211453769}
     - target: {fileID: 4103943047474828, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -2052,21 +2041,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4775813472924660, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198719232251827822, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: TrailModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198555290127990140, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: TrailModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198473411017493328, guid: 60955081f314e79489eaff6dbc9416a2,
-        type: 2}
-      propertyPath: TrailModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114254695894668442, guid: 60955081f314e79489eaff6dbc9416a2,

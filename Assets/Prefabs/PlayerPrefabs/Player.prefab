@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246519396218300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.060435, y: 0.41, z: -32.620003}
+  m_LocalPosition: {x: 0.060435, y: 0.41, z: 0}
   m_LocalScale: {x: 0.1417015, y: 0.1417015, z: 0.17004181}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1650489523168840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.088647, y: 0.06, z: -32.620003}
+  m_LocalPosition: {x: 0.088647, y: 0.06, z: 0}
   m_LocalScale: {x: 0.1417015, y: 0.1417015, z: 0.17004181}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293504616159686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03669, y: -0.67, z: -32.620003}
+  m_LocalPosition: {x: 0.03669, y: -0.67, z: 0}
   m_LocalScale: {x: 0.23616916, y: 0.23616916, z: 0.283403}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
@@ -244,7 +244,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   HookPrefab: {fileID: 1715237323022502, guid: 71e70a5ceaca3ad49977126e0ba2d084, type: 2}
-  SmokeParticles: []
+  SmokeParticles:
+  - {fileID: 198555290127990140}
+  - {fileID: 198719232251827822}
+  - {fileID: 198473411017493328}
 --- !u!114 &114328992605814162
 MonoBehaviour:
   m_ObjectHideFlags: 1
