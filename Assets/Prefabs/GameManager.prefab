@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4338773890841838}
   - component: {fileID: 82849300905378038}
+  - component: {fileID: 164698427312541440}
   m_Layer: 0
   m_Name: PlayerJump
   m_TagString: Untagged
@@ -147,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4520469668318884}
   - component: {fileID: 82169993073443184}
+  - component: {fileID: 164163655478177636}
   m_Layer: 0
   m_Name: HookHitEnemy
   m_TagString: Untagged
@@ -501,7 +503,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ba892e0fb0e545b4590e00fddb83c1be, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 670cdb527b3157344a7a7d2da7c551d0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -691,7 +693,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ba892e0fb0e545b4590e00fddb83c1be, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 670cdb527b3157344a7a7d2da7c551d0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1.1
@@ -1359,7 +1361,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b8f44bb79c8a59f41986c82cda64e40d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.32
+  m_Volume: 0.2
   m_Pitch: 1.2
   Loop: 0
   Mute: 0
@@ -1900,6 +1902,50 @@ MonoBehaviour:
   BackgroundMusicSound: {fileID: 82854224676456190}
   ConstantAmbientSound: {fileID: 82182001254217770}
   ProgressiveAmbientSound: {fileID: 82404498293918864}
+--- !u!164 &164163655478177636
+AudioReverbFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538747407208120}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -544
+  m_DecayTime: 3.5
+  m_DecayHFRatio: 1.39
+  m_ReflectionsLevel: -115
+  m_ReverbLevel: 985
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 19070
+  m_RoomLF: -3588
+  m_LFReference: 110
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
+--- !u!164 &164698427312541440
+AudioReverbFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1085279066746040}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: 0
+  m_DecayTime: 1.1
+  m_DecayHFRatio: 1.39
+  m_ReflectionsLevel: -115
+  m_ReverbLevel: 985
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: -4295
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!164 &164802994205875700
 AudioReverbFilter:
   m_ObjectHideFlags: 1
@@ -1909,16 +1955,16 @@ AudioReverbFilter:
   m_Enabled: 1
   m_DryLevel: 0
   m_Room: -1000
-  m_RoomHF: 0
-  m_DecayTime: 8.39
+  m_RoomHF: -544
+  m_DecayTime: 3.5
   m_DecayHFRatio: 1.39
   m_ReflectionsLevel: -115
   m_ReverbLevel: 985
   m_ReverbDelay: 0.03
   m_Diffusion: 100
   m_Density: 100
-  m_HFReference: 5000
-  m_RoomLF: 0
-  m_LFReference: 250
+  m_HFReference: 19070
+  m_RoomLF: -3588
+  m_LFReference: 110
   m_ReflectionsDelay: 0
-  m_ReverbPreset: 24
+  m_ReverbPreset: 27
