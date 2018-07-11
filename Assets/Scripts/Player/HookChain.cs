@@ -4,31 +4,39 @@ using UnityEngine;
 
 public class HookChain : MonoBehaviour
 {
-    public ParticleSystem ChainParticle;
+    public GameObject ChainPrefab;
     public GameObject Target;
+	private List<GameObject> chainNodes;
+	public float ChainNodeSize;
 
     private Vector3 _targetPos;
 
     private void Start()
     {
         // _targetPos = Target.transform.position;
+		chainNodes = new List<GameObject>();
     }
 
     private void FixedUpdate()
     {
-        _targetPos = Target.transform.position;
+		_targetPos = Target.transform.position;
 
-        // --- Put here the code to play the particle
+		// Rotates the particle
+		Vector3 diff = _targetPos - transform.position;
+		diff.Normalize();
+		float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
-        // Rotates the particle
-        Vector3 diff = _targetPos - transform.position;
-        diff.Normalize();
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+		Vector3 distanceVec = _targetPos - PlayerPhysics.GetInstance().transform.position;
+		float distanceNum = distanceVec.magnitude;
 
-        // --- Put here the code to stop the particle
+		for (float i = ChainNodeSize/2; i < distanceNum; i += ChainNodeSize) {
+			CreateNode(i * distanceVec, rot_z);
+		}
 
     }
 
+	public void CreateNode(Vector3 position, float eulerAngle){
+		chainNodes.Add (GameObject.Instantiate (ChainPrefab, position, Quaternion.Euler(0,0,eulerAngle), transform));
+	}
 
 }

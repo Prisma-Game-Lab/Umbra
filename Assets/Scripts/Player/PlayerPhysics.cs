@@ -17,6 +17,16 @@ public class PlayerPhysics : MonoBehaviour
     private Ray2D _ray;
     private RaycastHit2D _hit;
 
+	private static PlayerPhysics instance;
+
+	private void Awake(){
+		instance = this;
+	}
+
+	public static PlayerPhysics GetInstance(){
+		return instance;
+	}
+
     private void Start()
     {
         _colllider = GetComponent<BoxCollider2D>();
