@@ -1869,16 +1869,16 @@ MonoBehaviour:
   PlayerLayer: 8
   FirstLevelSceneName: Tutorial 1
   SceneNames:
-  - Intro_00
-  - Intro_01
-  - Intro_02
-  - Intro_03
-  - Intro_04
-  - Zone00_00
-  - Zone00_01
-  - Zone00_02
-  - Zone00_03
-  - Zone00_04
+  - Tutorial 1
+  - Tutorial 2
+  - Tutorial 3
+  - Tutorial 4
+  - Ato 2 - 1
+  - Ato 2 - 2
+  - ATO2-4
+  - Ato 3 - 1
+  - Ato 3 - 2
+  - Credits
   HookGo: {fileID: 82998856947101052}
   HookGoDelay: 0
   HookHitLevel: {fileID: 82285189468720908}
