@@ -701,6 +701,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &788375779 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1414802952041264, guid: 60955081f314e79489eaff6dbc9416a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 788375778}
 --- !u!4 &806218122 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4014487110094374, guid: a12b790a84b99ef4385f6f8b406a80c9,
@@ -934,6 +939,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114074629158823508, guid: 17decf11c47caa94aadbe83d362151d2,
+        type: 2}
+      propertyPath: FrontLayerObject
+      value: 
+      objectReference: {fileID: 627678020}
+    - target: {fileID: 114074629158823508, guid: 17decf11c47caa94aadbe83d362151d2,
+        type: 2}
+      propertyPath: MiddleLayerObject
+      value: 
+      objectReference: {fileID: 592335492}
+    - target: {fileID: 114074629158823508, guid: 17decf11c47caa94aadbe83d362151d2,
+        type: 2}
+      propertyPath: PlayerObject
+      value: 
+      objectReference: {fileID: 788375779}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17decf11c47caa94aadbe83d362151d2, type: 2}
   m_IsPrefabParent: 0
