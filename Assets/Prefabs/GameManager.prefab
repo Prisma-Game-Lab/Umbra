@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerLayer: 8
-  FirstLevelSceneName: Intro_00
+  FirstLevelSceneName: Tutorial 1
   SceneNames:
   - Intro_00
   - Intro_01
