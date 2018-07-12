@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58929593398596958}
   - component: {fileID: 50254186180154358}
   - component: {fileID: 114569146671615338}
+  - component: {fileID: 114457127355897790}
   m_Layer: 17
   m_Name: Hook
   m_TagString: Untagged
@@ -108,6 +109,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114457127355897790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715237323022502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92120a1737338fb40b04b27bece2950e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChainPrefab: {fileID: 1079134700037178, guid: 2edfc4e1794c0804f9c5b33bfe5cf50b,
+    type: 2}
+  Target: {fileID: 1856568573527810}
+  ChainNodeSize: 0.2
 --- !u!114 &114569146671615338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fece7be20d4a8f74fa12640b2bd36fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
 --- !u!212 &212307713425714406
 SpriteRenderer:
   m_ObjectHideFlags: 1

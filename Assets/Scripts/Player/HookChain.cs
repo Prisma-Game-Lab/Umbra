@@ -8,6 +8,7 @@ public class HookChain : MonoBehaviour
     public GameObject Target;
 	private List<GameObject> chainNodes;
 	public float ChainNodeSize;
+	[Tooltip("Desmarque para não mostrar a corrente")]public bool ShouldShowChain = true;
 
     private Vector3 _targetPos;
 
@@ -19,20 +20,31 @@ public class HookChain : MonoBehaviour
 
     private void FixedUpdate()
     {
-		_targetPos = Target.transform.position;
+		if (ShouldShowChain) {
+			foreach (GameObject g in chainNodes) {
+				Destroy(g);
+			}
 
-		// Rotates the particle
-		Vector3 diff = _targetPos - transform.position;
-		diff.Normalize();
-		float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
-		Vector3 distanceVec = _targetPos - PlayerPhysics.GetInstance().transform.position;
-		float distanceNum = distanceVec.magnitude;
+			_targetPos = Target.transform.position;
 
-		for (float i = ChainNodeSize/2; i < distanceNum; i += ChainNodeSize) {
-			CreateNode(i * distanceVec, rot_z);
+			// Rotates the particle
+			Vector3 diff = _targetPos - PlayerPhysics.GetInstance ().transform.position;
+			diff.Normalize ();
+			float rot_z = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
+
+			//Distância
+			Vector2 distanceVec = new Vector2 (transform.position.x - PlayerPhysics.GetInstance ().transform.position.x,
+				                     transform.position.y - PlayerPhysics.GetInstance ().transform.position.y);
+			float distanceNum = distanceVec.magnitude;
+
+			//spawna chains
+			Vector3 nextSpawnPos = transform.position;
+			for (float i = ChainNodeSize / 2; i < distanceNum - 4 * ChainNodeSize; i += ChainNodeSize) {
+				nextSpawnPos = transform.position - new Vector3 (distanceVec.x * i, distanceVec.y * i, 0);
+				CreateNode (nextSpawnPos, 90 + rot_z);
+			}
 		}
-
     }
 
 	public void CreateNode(Vector3 position, float eulerAngle){
