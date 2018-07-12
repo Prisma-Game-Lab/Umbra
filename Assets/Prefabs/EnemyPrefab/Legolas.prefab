@@ -82,8 +82,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580106371535238}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11, y: -3.78, z: -0.74}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 7.75, y: 2.14, z: 9.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4889121584042228}
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0675148106cabda48851ca52b2db6a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 706c4369bf4ec154390bd0ca96849894, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 23a701839233bfd448862353f688a9ed, type: 3}
   cursorMode: 0
   hotSpot: {x: 256, y: 256}
 --- !u!114 &114702914675885320
@@ -204,6 +204,7 @@ MonoBehaviour:
   TargetSpriteRenderer: {fileID: 212781771547983314}
   ObjectsToTurnOff: []
   ShouldSetThisToUnseen: 0
+  cameraShake: {fileID: 0}
   HookLayer:
     serializedVersion: 2
     m_Bits: 131072
