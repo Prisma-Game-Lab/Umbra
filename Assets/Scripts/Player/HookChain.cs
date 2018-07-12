@@ -20,7 +20,6 @@ public class HookChain : MonoBehaviour
 
     private void FixedUpdate()
     {
-		Time.timeScale = 0.1f;
 		if (ShouldShowChain) {
 			foreach (GameObject g in chainNodes) {
 				Destroy(g);
