@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public SpriteRenderer ShadowSpriteRenderer;
     public PauseScript PauseScript;
+    public Animator JumpAnimator;
 
     public float Gravity = 10;
     public float Speed = 10;
@@ -67,22 +68,25 @@ public class PlayerController : MonoBehaviour
         {
             _targetSpeed = 0;
             _currentSpeed = 0;
-            
+
         }
 
         _targetSpeed = KeyBindings.Instance.GetAxisX() * Speed;
         _currentSpeed = IncrementTowards(_currentSpeed, _targetSpeed, Acceleration);
         _amountToMove.x = _currentSpeed;
 
-		//checa se player está tentando se mover e toca som baseado nisso
-		if (_targetSpeed > float.Epsilon || _targetSpeed < -float.Epsilon) {
-			if (!LevelManager.Instance.PlayerWalk.isPlaying) {
-				LevelManager.Instance.PlayerWalk.PlayDelayed (LevelManager.Instance.PlayerWalkDelay);
-			}
-		} 
-		else {
-			LevelManager.Instance.PlayerWalk.Stop();
-		}
+        //checa se player está tentando se mover e toca som baseado nisso
+        if (_targetSpeed > float.Epsilon || _targetSpeed < -float.Epsilon)
+        {
+            if (!LevelManager.Instance.PlayerWalk.isPlaying)
+            {
+                LevelManager.Instance.PlayerWalk.PlayDelayed(LevelManager.Instance.PlayerWalkDelay);
+            }
+        }
+        else
+        {
+            LevelManager.Instance.PlayerWalk.Stop();
+        }
     }
 
     private void updateWithGravity()
@@ -95,12 +99,12 @@ public class PlayerController : MonoBehaviour
         if (_playerPhysics.IsGrounded)
         {
             _amountToMove.y = Mathf.Max(0.0f, _amountToMove.y);
-            
+
         }
         else
         {
             _amountToMove.y -= Gravity * Time.deltaTime;
-           
+
         }
     }
 
@@ -110,12 +114,16 @@ public class PlayerController : MonoBehaviour
         {
             if (this._currentAvailableJumps > 0)
             {
-				LevelManager.Instance.PlayerJump.PlayDelayed(LevelManager.Instance.PlayerJumpDelay); //toca som de pulo
+                LevelManager.Instance.PlayerJump.PlayDelayed(LevelManager.Instance.PlayerJumpDelay); //toca som de pulo
+
+                // Jump Animation
+                if (JumpAnimator != null)
+                    JumpAnimator.SetTrigger("jumpPlayer");
+
                 this._currentAvailableJumps -= 1;
                 _amountToMove.y = JumpHeight;
                 this.resetHook();
             }
-
         }
 
         if (_playerPhysics.IsGrounded == true && this._wasGroundedLastUpdate == false)
@@ -155,15 +163,16 @@ public class PlayerController : MonoBehaviour
                 this._hookInstantiated = Instantiate(this.HookPrefab, this.transform.position, hookRotation);
                 this._hookCollider = this._hookInstantiated.GetComponent<CircleCollider2D>();
 
-				// hookGo = GameObject.Find("Hook Go").GetComponent<AudioSource>();
-				LevelManager.Instance.HookGo.PlayDelayed (LevelManager.Instance.HookGoDelay);
+                // hookGo = GameObject.Find("Hook Go").GetComponent<AudioSource>();
+                LevelManager.Instance.HookGo.PlayDelayed(LevelManager.Instance.HookGoDelay);
             }
         }
         if (_isHookOnLaunchPhase)
         {
             Vector3 localTranslation = new Vector3(1.0f, 0.0f, 0.0f) * this.HookLaunchSpeed * Time.deltaTime;
             this._hookInstantiated.transform.localPosition += this._hookInstantiated.transform.TransformVector(localTranslation);
-            if ((this._hookInstantiated.transform.position - this.transform.position).magnitude > HookMaxDistance) {
+            if ((this._hookInstantiated.transform.position - this.transform.position).magnitude > HookMaxDistance)
+            {
                 this.resetHook();
             }
             else if (this._hookCollider.IsTouchingLayers(this.BreakCollisionLayerMask))
@@ -171,16 +180,16 @@ public class PlayerController : MonoBehaviour
                 this.resetHook();
             }
             else if (this._hookCollider.IsTouchingLayers(this.HookCollisionLayerMask))
-			{
-				LevelManager.Instance.HookHitLevel.PlayDelayed(LevelManager.Instance.HookHitLevelDelay); //toca som de quando a hook atinge algo
+            {
+                LevelManager.Instance.HookHitLevel.PlayDelayed(LevelManager.Instance.HookHitLevelDelay); //toca som de quando a hook atinge algo
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
-				LevelManager.Instance.HookReturns.PlayDelayed(LevelManager.Instance.HookReturnsDelay); 
+                LevelManager.Instance.HookReturns.PlayDelayed(LevelManager.Instance.HookReturnsDelay);
                 this._currentAvailableJumps = this.NumJumps;
             }
             else if (this._hookCollider.IsTouchingLayers(this.EnemyCollisionLayerMask))
             {
-				LevelManager.Instance.HookHitEnemy.PlayDelayed(LevelManager.Instance.HookHitEnemyDelay); //toca som de quando a hook atinge inimigo
+                LevelManager.Instance.HookHitEnemy.PlayDelayed(LevelManager.Instance.HookHitEnemyDelay); //toca som de quando a hook atinge inimigo
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
                 this._currentAvailableJumps = this.NumJumps;
@@ -208,7 +217,7 @@ public class PlayerController : MonoBehaviour
         this.updateWithJump();
         this.updateWithHook();
 
-        if(_amountToMove.x > 0)
+        if (_amountToMove.x > 0)
         {
             mySpriteRenderer.flipX = true;
             ShadowSpriteRenderer.flipX = true;
@@ -220,7 +229,7 @@ public class PlayerController : MonoBehaviour
                 fo.xMultiplier = -5;
             }
         }
-        else if(_amountToMove.x < 0)
+        else if (_amountToMove.x < 0)
         {
             mySpriteRenderer.flipX = false;
             ShadowSpriteRenderer.flipX = false;

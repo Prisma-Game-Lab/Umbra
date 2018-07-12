@@ -39,7 +39,7 @@ public class HookChain : MonoBehaviour
 			float distanceNum = distanceVec.magnitude;
 
 			//spawna chains
-			Debug.Log (distanceNum + " " + ChainNodeSize);
+			//Debug.Log (distanceNum + " " + ChainNodeSize);
 			Vector3 nextSpawnPos = transform.position;
 			if (rot_z >= 90) {
 				for (float i = ChainNodeSize / 2; i < distanceNum - 4 * ChainNodeSize; i += ChainNodeSize) {
