@@ -20,6 +20,7 @@ public class HookChain : MonoBehaviour
 
     private void FixedUpdate()
     {
+		Time.timeScale = 0.1f;
 		if (ShouldShowChain) {
 			foreach (GameObject g in chainNodes) {
 				Destroy(g);
@@ -39,10 +40,36 @@ public class HookChain : MonoBehaviour
 			float distanceNum = distanceVec.magnitude;
 
 			//spawna chains
+			Debug.Log (distanceNum + " " + ChainNodeSize);
 			Vector3 nextSpawnPos = transform.position;
-			for (float i = ChainNodeSize / 2; i < distanceNum - 4 * ChainNodeSize; i += ChainNodeSize) {
-				nextSpawnPos = transform.position - new Vector3 (distanceVec.x * i, distanceVec.y * i, 0);
-				CreateNode (nextSpawnPos, 90 + rot_z);
+			if (rot_z >= 90) {
+				for (float i = ChainNodeSize / 2; i < distanceNum - 4 * ChainNodeSize; i += ChainNodeSize) {
+					nextSpawnPos = transform.position - new Vector3 (distanceVec.x * i, distanceVec.y * i, 0);
+
+					if (nextSpawnPos.x > PlayerPhysics.GetInstance().transform.position.x) {
+						nextSpawnPos = new Vector3(PlayerPhysics.GetInstance().transform.position.x, nextSpawnPos.y, nextSpawnPos.z);
+					}
+
+					if (nextSpawnPos.y < PlayerPhysics.GetInstance().transform.position.y) {
+						nextSpawnPos = new Vector3(nextSpawnPos.x, PlayerPhysics.GetInstance().transform.position.y, nextSpawnPos.z);
+					}
+
+					CreateNode (nextSpawnPos, 90 + rot_z);
+				}
+			} else {
+				for (float i = ChainNodeSize / 2; i < distanceNum - 4 * ChainNodeSize; i += ChainNodeSize) {
+					nextSpawnPos = transform.position - new Vector3 (distanceVec.x * i, distanceVec.y * i, 0);
+
+					if (nextSpawnPos.x < PlayerPhysics.GetInstance().transform.position.x) {
+						nextSpawnPos = new Vector3(PlayerPhysics.GetInstance().transform.position.x, nextSpawnPos.y, nextSpawnPos.z);
+					}
+
+					if (nextSpawnPos.y < PlayerPhysics.GetInstance().transform.position.y) {
+						nextSpawnPos = new Vector3(nextSpawnPos.x, PlayerPhysics.GetInstance().transform.position.y, nextSpawnPos.z);
+					}
+
+					CreateNode (nextSpawnPos, 90 + rot_z);
+				}
 			}
 		}
     }
