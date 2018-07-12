@@ -155,7 +155,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576046932860440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 6.0609274, y: 1.8614995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4040028844258928}
@@ -226,7 +226,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.78913045, y: 1.2304348}
+    oldSize: {x: 0.78913045, y: 1.2652174}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0675148106cabda48851ca52b2db6a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 706c4369bf4ec154390bd0ca96849894, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 23a701839233bfd448862353f688a9ed, type: 3}
   cursorMode: 0
   hotSpot: {x: 256, y: 256}
 --- !u!114 &114448185767179448
@@ -325,7 +325,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 961dc6ed2268deb47b334d146de39ba4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccbb8fab499c74f47953e1ecee58a013, type: 3}
   m_Color: {r: 0.5411765, g: 0.6039216, b: 0.35686275, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -370,7 +370,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 511a9e38a9b7ba84bb75fe48cf9dc123, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc134ffd11115d04eadfa24dded75298, type: 3}
   m_Color: {r: 0.5411765, g: 0.6039216, b: 0.35686275, a: 1}
   m_FlipX: 1
   m_FlipY: 0
