@@ -204,7 +204,7 @@ Transform:
   m_LocalPosition: {x: -19.21, y: -4.71, z: 0}
   m_LocalScale: {x: 1.7925463, y: 5.5089045, z: 1.20133}
   m_Children: []
-  m_Father: {fileID: 1627666232}
+  m_Father: {fileID: 1257404607}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &73011158
@@ -283,7 +283,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.3
 --- !u!114 &73011161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.1061666, z: 1}
   m_Children: []
   m_Father: {fileID: 1257404607}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.204}
 --- !u!212 &86375897
 SpriteRenderer:
@@ -432,7 +432,7 @@ Prefab:
       objectReference: {fileID: 788747029}
     - target: {fileID: 4657140271615338, guid: bc631f5931b11d4469f7982fc7d693f9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc631f5931b11d4469f7982fc7d693f9, type: 2}
@@ -714,7 +714,7 @@ Transform:
   - {fileID: 587779896}
   - {fileID: 495624642}
   m_Father: {fileID: 1627666232}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &582343673
 GameObject:
@@ -1732,11 +1732,12 @@ Transform:
   m_Children:
   - {fileID: 2052562827}
   - {fileID: 607236044}
+  - {fileID: 73011157}
   - {fileID: 1668676380}
   - {fileID: 86375896}
   - {fileID: 1845587024}
   m_Father: {fileID: 1627666232}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1296410530
 Prefab:
@@ -2252,7 +2253,7 @@ Transform:
   - {fileID: 212095568}
   - {fileID: 931524867}
   m_Father: {fileID: 1627666232}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554035595
 GameObject:
@@ -2429,7 +2430,6 @@ Transform:
   m_Children:
   - {fileID: 776438517}
   - {fileID: 60383914}
-  - {fileID: 73011157}
   - {fileID: 1257404607}
   - {fileID: 577531112}
   - {fileID: 1550218664}
@@ -2642,7 +2642,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1257404607}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -6.1860003}
 --- !u!212 &1668676381
 SpriteRenderer:
@@ -3122,7 +3122,7 @@ Transform:
   m_LocalScale: {x: 1.0533128, y: 1.1556869, z: 1}
   m_Children: []
   m_Father: {fileID: 1257404607}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.1280003}
 --- !u!212 &1845587025
 SpriteRenderer:
@@ -3196,7 +3196,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2
 --- !u!1 &1893836946 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1479180330607682, guid: 7167c3856e5ef4144bc771c84e601ad9,
