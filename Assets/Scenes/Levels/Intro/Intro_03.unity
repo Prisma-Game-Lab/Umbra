@@ -782,6 +782,21 @@ Prefab:
       propertyPath: LightSourcesBlurMaterial
       value: 
       objectReference: {fileID: 2100000, guid: a359593f98c7f7740b07a09ac6d11e43, type: 2}
+    - target: {fileID: 20978409376676492, guid: 17decf11c47caa94aadbe83d362151d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 9.427209
+      objectReference: {fileID: 0}
+    - target: {fileID: 20529890059589792, guid: 17decf11c47caa94aadbe83d362151d2,
+        type: 2}
+      propertyPath: orthographic size
+      value: 12.427209
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658144061191442, guid: 17decf11c47caa94aadbe83d362151d2,
+        type: 2}
+      propertyPath: LightPixelSize
+      value: 0.1364901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17decf11c47caa94aadbe83d362151d2, type: 2}
   m_IsPrefabParent: 0

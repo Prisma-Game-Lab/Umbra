@@ -10,6 +10,8 @@ public class LoseColorOnHookScript : MonoBehaviour {
 
 	public bool ShouldSetThisToUnseen = true;
     public CameraShake cameraShake;
+    
+    
 
 	[Header("Layer Info")]
   public LayerMask HookLayer;
@@ -26,6 +28,7 @@ public class LoseColorOnHookScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
 		this._collider = this.GetComponent<BoxCollider2D>();
 		this._hasStartedColorAnimation = false;
 		this._hasEndedColorAnimation = false;
@@ -38,14 +41,24 @@ public class LoseColorOnHookScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this._hasStartedColorAnimation == false && this._hasEndedColorAnimation == false) {
-			this.beforeAnimation();
-		} else if(this._hasStartedColorAnimation == true && this._hasEndedColorAnimation == false) {
-			this.duringAnimation();
-		} else if(this._hasStartedColorAnimation == true && this._hasEndedColorAnimation == true) {
-			this.afterAnimation();
-		}
-	}
+
+            if (this._hasStartedColorAnimation == false && this._hasEndedColorAnimation == false)
+            {
+                this.beforeAnimation();
+            }
+            else if (this._hasStartedColorAnimation == true && this._hasEndedColorAnimation == false)
+            {
+                this.duringAnimation();
+            }
+            else if (this._hasStartedColorAnimation == true && this._hasEndedColorAnimation == true)
+            {
+                this.afterAnimation();
+            }
+        
+       
+    }
+		
+	
 
 	private void duringAnimation() {
 		this._colorAnimationTime += Time.deltaTime / this.AnimationDurationInSeconds;
@@ -62,14 +75,19 @@ public class LoseColorOnHookScript : MonoBehaviour {
 	private void beforeAnimation() {
 		if(this._collider.IsTouchingLayers(this.HookLayer)) {
 			this.onHookHit();
+            
 		}
 	}
 
 	private void onHookHit() {
-		this._hasStartedColorAnimation = true;
-		this._colorAnimationTime = 0.0f;
-		this._color = this.TargetSpriteRenderer.color;
-        StartCoroutine(cameraShake.Shake(.15f, .4f));
+       
+            this._hasStartedColorAnimation = true;
+            this._colorAnimationTime = 0.0f;
+            this._color = this.TargetSpriteRenderer.color;
+            StartCoroutine(cameraShake.Shake(.15f, .4f));
+            
+        
+		
 
         //Som
         if (transform.parent.tag == "Crystal") {
@@ -78,16 +96,25 @@ public class LoseColorOnHookScript : MonoBehaviour {
 	}
 
 	private void onAnimationFinish() {
-		this._colorAnimationTime = 1.0f;
-		this._hasStartedColorAnimation = true;
-		this._hasEndedColorAnimation = true;
-		if (this.ShouldSetThisToUnseen) {
-			this.transform.gameObject.layer = UnseenLayer;
-		} else {
-			this.transform.gameObject.layer = 0;
-		}
-		foreach(GameObject gameObj in this.ObjectsToTurnOff) {
-			gameObj.SetActive(false);
-		}
-	}
+        
+            this._colorAnimationTime = 1.0f;
+            this._hasStartedColorAnimation = true;
+            this._hasEndedColorAnimation = true;
+            if (this.ShouldSetThisToUnseen)
+            {
+                this.transform.gameObject.layer = UnseenLayer;
+            }
+            else
+            {
+                this.transform.gameObject.layer = 0;
+            }
+            foreach (GameObject gameObj in this.ObjectsToTurnOff)
+            {
+                gameObj.SetActive(false);
+            }
+        
+        
+         }
+
+    
 }

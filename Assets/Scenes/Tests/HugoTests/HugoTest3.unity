@@ -229,8 +229,7 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 114769431192018568, guid: 68f6eaef01a76b64ea3f2170da9c7bf8,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: state
       value: 0
       objectReference: {fileID: 0}
@@ -756,10 +755,6 @@ Prefab:
     - target: {fileID: 4714776133063774, guid: 15fd0a7b2401677419964eed134381d4, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4040028844258928, guid: 15fd0a7b2401677419964eed134381d4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15fd0a7b2401677419964eed134381d4, type: 2}
@@ -2094,6 +2089,16 @@ Prefab:
       propertyPath: PauseScript
       value: 
       objectReference: {fileID: 786516079}
+    - target: {fileID: 212222239810936778, guid: 60955081f314e79489eaff6dbc9416a2,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212690149621391680, guid: 60955081f314e79489eaff6dbc9416a2,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0

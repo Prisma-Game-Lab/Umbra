@@ -153,7 +153,7 @@ Transform:
   - {fileID: 4103943047474828}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4775813472924660
 Transform:
   m_ObjectHideFlags: 1
@@ -2297,7 +2297,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: -2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6828,7 +6828,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: -2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11359,7 +11359,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: -2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -14063,7 +14063,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e1450bdf32202a1439810e12a4eed23e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 28.42, y: 43.52}
@@ -14108,7 +14108,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e1450bdf32202a1439810e12a4eed23e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 28.42, y: 43.52}
