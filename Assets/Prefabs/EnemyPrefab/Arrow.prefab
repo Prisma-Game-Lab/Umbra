@@ -157,9 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e3ccb603f0a2647982372e5018d59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrowDamage: 2
   MaxDistance: 20
-  ArrowSpeed: 1
+  ArrowSpeed: 2
 --- !u!212 &212708630189824950
 SpriteRenderer:
   m_ObjectHideFlags: 1
