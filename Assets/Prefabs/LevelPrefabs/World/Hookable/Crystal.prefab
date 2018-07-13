@@ -215,19 +215,20 @@ AudioSource:
   m_GameObject: {fileID: 1834115729982510}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5536eb250933a8e4b96b208dc695bbda,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4e09448831fbf1942a92a614e31ab741, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.78
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 0
   DopplerLevel: 0
-  MinDistance: 3
-  MaxDistance: 6.5
+  MinDistance: 5
+  MaxDistance: 8
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -353,6 +354,7 @@ MonoBehaviour:
   - {fileID: 212700314076502038}
   ObjectsToTurnOff:
   - {fileID: 1556016369147532}
+  - {fileID: 1834115729982510}
   ShouldSetThisToUnseen: 1
   cameraShake: {fileID: 0}
   HookLayer:
