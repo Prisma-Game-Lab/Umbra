@@ -114,11 +114,11 @@ public class PlayerController : MonoBehaviour
         {
             if (this._currentAvailableJumps > 0)
             {
-                LevelManager.Instance.PlayerJump.PlayDelayed(LevelManager.Instance.PlayerJumpDelay); //toca som de pulo
-
                 // Jump Animation
                 if (JumpAnimator != null)
                     JumpAnimator.SetTrigger("jumpPlayer");
+
+                LevelManager.Instance.PlayerJump.PlayDelayed(LevelManager.Instance.PlayerJumpDelay); //toca som de pulo
 
                 this._currentAvailableJumps -= 1;
                 _amountToMove.y = JumpHeight;
