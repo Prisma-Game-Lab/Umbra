@@ -1368,6 +1368,16 @@ Prefab:
       propertyPath: state
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 60418122090212414, guid: 68f6eaef01a76b64ea3f2170da9c7bf8,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 60418122090212414, guid: 68f6eaef01a76b64ea3f2170da9c7bf8,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68f6eaef01a76b64ea3f2170da9c7bf8, type: 2}
   m_IsPrefabParent: 0
@@ -1881,12 +1891,12 @@ Prefab:
     - target: {fileID: 60418122090212414, guid: 68f6eaef01a76b64ea3f2170da9c7bf8,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: 5
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 60418122090212414, guid: 68f6eaef01a76b64ea3f2170da9c7bf8,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 5
+      value: 5.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68f6eaef01a76b64ea3f2170da9c7bf8, type: 2}
