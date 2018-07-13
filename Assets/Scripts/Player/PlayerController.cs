@@ -114,6 +114,8 @@ public class PlayerController : MonoBehaviour
         {
             if (this._currentAvailableJumps > 0)
             {
+                _playerPhysics.EndJump = false;
+
                 // Jump Animation
                 if (JumpAnimator != null)
                     JumpAnimator.SetTrigger("jumpPlayer");
@@ -129,6 +131,15 @@ public class PlayerController : MonoBehaviour
         if (_playerPhysics.IsGrounded == true && this._wasGroundedLastUpdate == false)
         {
             this._currentAvailableJumps = this.NumJumps;
+        }
+
+        if (!_playerPhysics.EndJump)
+        {
+            // Faling Animation
+            if (JumpAnimator != null)
+                JumpAnimator.SetTrigger("fallingPlayer");
+
+            _playerPhysics.EndJump = true;
         }
 
         this._wasGroundedLastUpdate = _playerPhysics.IsGrounded;

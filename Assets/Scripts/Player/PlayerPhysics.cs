@@ -9,6 +9,7 @@ public class PlayerPhysics : MonoBehaviour
     [HideInInspector] public bool IsGrounded;  // When touching the ground
     [HideInInspector] public bool IsBlockedVertically;  // When touching collision on the sides
     [HideInInspector] public bool IsBlockedHorizontally;  // When touching collision on the sides
+    [HideInInspector] public bool EndJump = true;
 
     private BoxCollider2D _colllider;
     private Vector3 _colSize;
