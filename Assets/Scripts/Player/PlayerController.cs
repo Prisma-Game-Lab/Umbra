@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
 
     public SpriteRenderer ShadowSpriteRenderer;
     public PauseScript PauseScript;
-    public Animator JumpAnimator;
 
     public float Gravity = 10;
     public float Speed = 10;
@@ -29,13 +28,14 @@ public class PlayerController : MonoBehaviour
     public GameObject HookPrefab;
 
     public ParticleSystem[] SmokeParticles;
+
+    [HideInInspector] public int CurrentAvailableJumps;
     #endregion
 
     #region Private
     private float _currentSpeed;
     private float _targetSpeed;
     private Vector3 _amountToMove;
-    private int _currentAvailableJumps;
     private bool _wasGroundedLastUpdate;
     private bool _isHookOnLaunchPhase = false;
     private bool _isHookOnPullPhase = false;
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _playerPhysics = GetComponent<PlayerPhysics>();
-        this._currentAvailableJumps = this.NumJumps;
+        this.CurrentAvailableJumps = this.NumJumps;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -112,17 +112,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyBindings.Instance.PlayerJump))  // Jump
         {
-            if (this._currentAvailableJumps > 0)
+            if (this.CurrentAvailableJumps > 0)
             {
                 _playerPhysics.EndJump = false;
 
-                // Jump Animation
-                if (JumpAnimator != null)
-                    JumpAnimator.SetTrigger("jumpPlayer");
-
                 LevelManager.Instance.PlayerJump.PlayDelayed(LevelManager.Instance.PlayerJumpDelay); //toca som de pulo
 
-                this._currentAvailableJumps -= 1;
+                this.CurrentAvailableJumps -= 1;
                 _amountToMove.y = JumpHeight;
                 this.resetHook();
             }
@@ -130,16 +126,7 @@ public class PlayerController : MonoBehaviour
 
         if (_playerPhysics.IsGrounded == true && this._wasGroundedLastUpdate == false)
         {
-            this._currentAvailableJumps = this.NumJumps;
-        }
-
-        if (!_playerPhysics.EndJump)
-        {
-            // Faling Animation
-            if (JumpAnimator != null)
-                JumpAnimator.SetTrigger("fallingPlayer");
-
-            _playerPhysics.EndJump = true;
+            this.CurrentAvailableJumps = this.NumJumps;
         }
 
         this._wasGroundedLastUpdate = _playerPhysics.IsGrounded;
@@ -196,14 +183,14 @@ public class PlayerController : MonoBehaviour
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
                 LevelManager.Instance.HookReturns.PlayDelayed(LevelManager.Instance.HookReturnsDelay);
-                this._currentAvailableJumps = this.NumJumps;
+                this.CurrentAvailableJumps = this.NumJumps;
             }
             else if (this._hookCollider.IsTouchingLayers(this.EnemyCollisionLayerMask))
             {
                 LevelManager.Instance.HookHitEnemy.PlayDelayed(LevelManager.Instance.HookHitEnemyDelay); //toca som de quando a hook atinge inimigo
                 this._isHookOnLaunchPhase = false;
                 this._isHookOnPullPhase = true;
-                this._currentAvailableJumps = this.NumJumps;
+                this.CurrentAvailableJumps = this.NumJumps;
             }
         }
         if (_isHookOnPullPhase)
