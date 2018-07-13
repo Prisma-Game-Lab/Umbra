@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDistance: 20
-  ArrowSpeed: 1
+  ArrowSpeed: 2
 --- !u!212 &212708630189824950
 SpriteRenderer:
   m_ObjectHideFlags: 1
