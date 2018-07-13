@@ -13,9 +13,14 @@ public class TextFadeIn : MonoBehaviour {
 	public float DelayBeforeStartingToFadeIn = 1.0f;
 	public float FadeInDurationLinear = 1.0f;
 
+    public bool ShouldFadeOut = false;
+    public float DelayBeforeStartingToFadeOut = 5.0f;
+    public float FadeOutDurationLinear = 1.0f;
+
 	// Use this for initialization
 	void Start () {
   	this._textComponent = GetComponent<Text>();
+        DelayBeforeStartingToFadeOut += DelayBeforeStartingToFadeIn;
 		this.setColorAlpha(0.0f);
 		this._currentTimeCounter = 0.0f;
 	}
@@ -40,10 +45,22 @@ public class TextFadeIn : MonoBehaviour {
 			{
 				this.setColorAlpha(Mathf.Lerp(0.0f, 1.0f, (this._currentTimeCounter - this.DelayBeforeStartingToFadeIn) / this.FadeInDurationLinear));
 			}
-		}
-		else
+        } else if (ShouldFadeOut && (this._currentTimeCounter < this.DelayBeforeStartingToFadeOut + this.FadeOutDurationLinear))
+        {
+            this._currentTimeCounter += Time.deltaTime;
+            if (this._currentTimeCounter < this.DelayBeforeStartingToFadeOut)
+            {
+                this.setColorAlpha(1.0f);
+            }
+            else
+            {
+                this.setColorAlpha(Mathf.Lerp(1.0f, 0.0f, (this._currentTimeCounter - this.DelayBeforeStartingToFadeOut) / this.FadeInDurationLinear));
+            }
+        } else if (ShouldFadeOut)
 		{
-			this.setColorAlpha(1.0f);
-		}
+			this.setColorAlpha(0.0f);
+        } else {
+            this.setColorAlpha(1.0f);
+        }
 	}
 }
