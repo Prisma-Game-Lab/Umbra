@@ -188,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580106371535238}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3, y: -3, z: 0}
+  m_LocalPosition: {x: -2.39, y: -0.1, z: 9.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4467259336362972}
@@ -268,8 +268,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0}
-      - {x: 5, y: -1.5}
-      - {x: 5, y: 1.5}
+      - {x: 5.7, y: -1.5}
+      - {x: 5.7, y: 1.5}
 --- !u!61 &61753084115823566
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -311,6 +311,11 @@ MonoBehaviour:
   - {fileID: 212023431047882056}
   - {fileID: 212411861597467294}
   ObjectsToTurnOff: []
+  ObjectsToChangeLayer:
+  - {fileID: 1177024674457056}
+  - {fileID: 1993636730413160}
+  - {fileID: 1097542836686010}
+  NewLayer: DeadEnemy
   ShouldSetThisToUnseen: 0
   cameraShake: {fileID: 0}
   HookLayer:

@@ -8,6 +8,8 @@ public class LoseColorOnHookScript : MonoBehaviour
     [Header("Target Object")]
     public SpriteRenderer[] TargetSpriteRenderer;
     public List<GameObject> ObjectsToTurnOff;
+	public List<GameObject> ObjectsToChangeLayer;
+	public string NewLayer;
 
     public bool ShouldSetThisToUnseen = true;
     public CameraShake cameraShake;
@@ -127,6 +129,9 @@ public class LoseColorOnHookScript : MonoBehaviour
         {
             this.transform.gameObject.layer = 0;
         }
+		foreach (GameObject gameObj in ObjectsToChangeLayer) {
+			gameObj.layer = LayerMask.NameToLayer(NewLayer);
+		}
         foreach (GameObject gameObj in this.ObjectsToTurnOff)
         {
             gameObj.SetActive(false);
