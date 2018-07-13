@@ -1706,6 +1706,11 @@ Prefab:
       propertyPath: Sounds.Array.data[0].SoundToChange
       value: 
       objectReference: {fileID: 1063790974}
+    - target: {fileID: 114173954215265694, guid: 4d4ffa887664db543ab82d2d84781bc1,
+        type: 2}
+      propertyPath: Sounds.Array.data[0].AudioSourceName
+      value: Background Music
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4ffa887664db543ab82d2d84781bc1, type: 2}
   m_IsPrefabParent: 0

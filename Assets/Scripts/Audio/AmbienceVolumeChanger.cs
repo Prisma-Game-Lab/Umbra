@@ -6,7 +6,8 @@ public class AmbienceVolumeChanger : MonoBehaviour {
 	[System.Serializable] public class ChangerOptions
 	{
 		[Range(0,1)] public float NewVolume;
-		public AudioSource SoundToChange;
+		public string AudioSourceName;
+		[HideInInspector] public AudioSource SoundToChange;
 	}
 
 	public ChangerOptions[] Sounds;
@@ -14,6 +15,7 @@ public class AmbienceVolumeChanger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		foreach (ChangerOptions sound in Sounds) {
+			sound.SoundToChange = GameObject.Find (sound.AudioSourceName).GetComponent<AudioSource>();
 			sound.SoundToChange.volume = sound.NewVolume;
 		}
 	}
