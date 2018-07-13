@@ -2064,7 +2064,8 @@ Prefab:
       propertyPath: PauseScript
       value: 
       objectReference: {fileID: 211453769}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95117705037030920, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2004215497
