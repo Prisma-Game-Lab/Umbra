@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705192249748780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.16, y: 4.18, z: 32.268593}
+  m_LocalPosition: {x: -1.48, y: 4.07, z: 31.78}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4593767954129622}
@@ -215,21 +215,22 @@ AudioSource:
   m_GameObject: {fileID: 1834115729982510}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5536eb250933a8e4b96b208dc695bbda,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4e09448831fbf1942a92a614e31ab741, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.78
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 0
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 5
+  MaxDistance: 8
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -262,7 +263,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -353,6 +354,7 @@ MonoBehaviour:
   - {fileID: 212700314076502038}
   ObjectsToTurnOff:
   - {fileID: 1556016369147532}
+  - {fileID: 1834115729982510}
   ShouldSetThisToUnseen: 1
   cameraShake: {fileID: 0}
   HookLayer:
