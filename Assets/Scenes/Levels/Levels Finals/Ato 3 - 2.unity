@@ -4924,7 +4924,7 @@ Prefab:
     - target: {fileID: 224840375569837930, guid: 96343f47995668543bd147ea99a86e01,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 179
+      value: -133
       objectReference: {fileID: 0}
     - target: {fileID: 224840375569837930, guid: 96343f47995668543bd147ea99a86e01,
         type: 2}
@@ -4939,17 +4939,17 @@ Prefab:
     - target: {fileID: 224361052424165660, guid: 96343f47995668543bd147ea99a86e01,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 41
+      value: -271
       objectReference: {fileID: 0}
     - target: {fileID: 224361052424165660, guid: 96343f47995668543bd147ea99a86e01,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -470.4
+      value: 458.2
       objectReference: {fileID: 0}
     - target: {fileID: 224840375569837930, guid: 96343f47995668543bd147ea99a86e01,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -119.6
+      value: 809
       objectReference: {fileID: 0}
     - target: {fileID: 224840375569837930, guid: 96343f47995668543bd147ea99a86e01,
         type: 2}
@@ -5010,6 +5010,16 @@ Prefab:
         type: 2}
       propertyPath: ShouldFadeOut
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224361052424165660, guid: 96343f47995668543bd147ea99a86e01,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224840375569837930, guid: 96343f47995668543bd147ea99a86e01,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96343f47995668543bd147ea99a86e01, type: 2}
