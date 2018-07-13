@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 114328992605814162}
   - component: {fileID: 50188036007197540}
   - component: {fileID: 95117705037030920}
+  - component: {fileID: 81965339787168622}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -146,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414802952041264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.073, y: -3.207, z: 32.620003}
+  m_LocalPosition: {x: -8.29, y: 2.28, z: 32.620003}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4775813472924660}
@@ -214,6 +215,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.42}
   m_EdgeRadius: 0
+--- !u!81 &81965339787168622
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414802952041264}
+  m_Enabled: 1
 --- !u!95 &95117705037030920
 Animator:
   serializedVersion: 3
