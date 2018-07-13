@@ -266,8 +266,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.6, y: 38.2}
-  m_SizeDelta: {x: 285.2, y: 453.1}
+  m_AnchoredPosition: {x: -43.6, y: -159.9}
+  m_SizeDelta: {x: 285.2, y: 849.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101581496
 MonoBehaviour:
@@ -301,7 +301,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "asdsadasdasd          \n\n\n\ndadasdasdasdasda\n\n\n\nasdasdasdasdasdasd\n\n\n\ndfsdfsdfsdfsdf\n\n\n\n\nsdfsdfsdfsdfsdfdsfds\n\n\n\n\nsdfsdfsdfsdfsdfsd\n\n\n\nsdfsdfsdfsdfsdf"
+  m_Text: "Produ\xE7\xE3o          \n\n\n\nArte\r\nLead:\r\n\n\n\n\n\n\nGame Design\nLead:\n\n\n\n\n\n\n\nPrograma\xE7\xE3o\nLead:\n\n\n\n\n\n\n\nSonoriza\xE7\xE3o\nLead:\n\n\n\n\nProfessor
+    Mentor\n\n\n\nDivulga\xE7\xE3o\n\n\n\nAgradecimentos"
 --- !u!222 &1101581497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -421,8 +422,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 265, y: 38.200012}
-  m_SizeDelta: {x: 285.2, y: 453.1}
+  m_AnchoredPosition: {x: 265, y: -159.90002}
+  m_SizeDelta: {x: 285.2, y: 849.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583808492
 MonoBehaviour:
@@ -456,7 +457,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "asdsadasdasd          \n\n\n\ndadasdasdasdasda\n\n\n\nasdasdasdasdasdasd\n\n\n\ndfsdfsdfsdfsdf\n\n\n\n\nsdfsdfsdfsdfsdfdsfds\n\n\n\n\nsdfsdfsdfsdfsdfsd\n\n\n\nsdfsdfsdfsdfsdf"
+  m_Text: "Daniel Oliveira\r\nMatheus Homsi\r\n          \n\n\nRizz Campanati\r\nBrunna
+    Cunha\r\nLaura Storti\r\nLuiza Arantes\r\nMarina Telles\n\n\n\nLeonardo Gonzalez\r\nCarolina
+    Gradel\r\nEduardo Wichrowski\r\nFernanda Netto\r\nGabriel Medeiros\r\nKassio Veras\r\n\n\n\nRenan
+    da Fonte\r\nGabriel Aquino\r\nHugo Tonette\r\nIan Albuquerque\r\nPedro Menezes\r\nRaphael
+    Ponce\r\n\n\n\nLucas Lima\r\nJo\xE3o Gabriel Soares\r\nVictor Hugo Forbes\r\n\n\nLeonardo
+    Cardarelli\n\n\n\nCarol Mano\n\n\n\nRPG\r\nPUC-Rio\r\nCTC\r\nCampus\r"
 --- !u!222 &1583808493
 CanvasRenderer:
   m_ObjectHideFlags: 0
