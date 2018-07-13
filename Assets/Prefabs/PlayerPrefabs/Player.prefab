@@ -110,7 +110,7 @@ Transform:
   m_LocalScale: {x: 0.1417015, y: 0.1417015, z: 0.17004181}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4142365458135400
 Transform:
@@ -123,7 +123,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4624462033791134
 Transform:
@@ -136,7 +136,7 @@ Transform:
   m_LocalScale: {x: 0.1417015, y: 0.1417015, z: 0.17004181}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4671831355841804
 Transform:
@@ -148,10 +148,10 @@ Transform:
   m_LocalPosition: {x: -8.13, y: -3.84, z: 32.620003}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
-  - {fileID: 4142365458135400}
   - {fileID: 4775813472924660}
   - {fileID: 4624462033791134}
   - {fileID: 4103943047474828}
+  - {fileID: 4142365458135400}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 0.23616916, y: 0.23616916, z: 0.283403}
   m_Children: []
   m_Father: {fileID: 4671831355841804}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50188036007197540
 Rigidbody2D:
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShadowSpriteRenderer: {fileID: 212222239810936778}
   PauseScript: {fileID: 0}
+  JumpAnimator: {fileID: 95117705037030920}
   Gravity: 60
   Speed: 8
   Acceleration: 90

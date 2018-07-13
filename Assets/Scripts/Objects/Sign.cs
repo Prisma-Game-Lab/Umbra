@@ -10,7 +10,6 @@ public class Sign : MonoBehaviour {
 
 	public void Start(){
 		dialogPanel = GameObject.Find("Canvas").GetComponent<DialogPanel>();
-		Debug.Log (dialogPanel);
 	}
 
 	public void Update(){
