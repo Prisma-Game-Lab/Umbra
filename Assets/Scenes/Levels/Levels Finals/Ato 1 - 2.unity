@@ -3583,6 +3583,11 @@ Prefab:
       propertyPath: PauseScript
       value: 
       objectReference: {fileID: 1457364674}
+    - target: {fileID: 212690149621391680, guid: 60955081f314e79489eaff6dbc9416a2,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60955081f314e79489eaff6dbc9416a2, type: 2}
   m_IsPrefabParent: 0
@@ -7581,6 +7586,11 @@ Prefab:
       value: "Use o Hook com o bot\xE3o esquerdo do mouse para hookar cristais e inimigos.
         Os cristais v\xE3o te ajudar a alcan\xE7ar lugares onde o seu pulo n\xE3o
         chega."
+      objectReference: {fileID: 0}
+    - target: {fileID: 212161189472239800, guid: 2895eb2706f0a1f459bd250d30380fef,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2895eb2706f0a1f459bd250d30380fef, type: 2}
