@@ -8,53 +8,17 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: a10f0ceca7ef7a448b1965f8cbe0bffe
-  - enabled: 0
-    path: Assets/Scenes/Levels/Intro/Intro_00.unity
-    guid: 15a7cb901d99c91419831b9d0a90b5fb
-  - enabled: 0
-    path: Assets/Scenes/Levels/Intro/Intro_01.unity
-    guid: df5e4b2066fb1d842a8abf7ff46d96f0
-  - enabled: 0
-    path: Assets/Scenes/Levels/Intro/Intro_02.unity
-    guid: 22ba3e812fa7ce84896b0cc1ebc03dd7
-  - enabled: 0
-    path: Assets/Scenes/Levels/Intro/Intro_03.unity
-    guid: 19d5cb16e30adda4ba197093077c5ef5
-  - enabled: 0
-    path: Assets/Scenes/Levels/Intro/Intro_04.unity
-    guid: b7a6505501c67a04799f71265783fb20
-  - enabled: 0
-    path: Assets/Scenes/Levels/Zone00/Zone00_00.unity
-    guid: 676135fc15717414f85eba9719d4b810
-  - enabled: 0
-    path: Assets/Scenes/Levels/Zone00/Zone00_01.unity
-    guid: d1d6034b77eea8844b09e9bf387ed4a8
-  - enabled: 0
-    path: Assets/Scenes/Levels/Zone00/Zone00_02.unity
-    guid: 49e5702c763099f4693963188fbeb71a
-  - enabled: 0
-    path: Assets/Scenes/Levels/Zone00/Zone00_03.unity
-    guid: f25b0a96520a0d747bf5ecb5555430b7
-  - enabled: 0
-    path: Assets/Scenes/Levels/Zone00/Zone00_04.unity
-    guid: 0966622b45b61674591fb04e33c108d7
-  - enabled: 0
-    path: Assets/Scenes/Tests/Ponce Tests/PauseMenu.unity
-    guid: be40ef6873e3e1a40a3c93b0cc0aa962
   - enabled: 1
-    path: Assets/Scenes/Levels/Levels Finals/Tutorial 1.unity
+    path: Assets/Scenes/Levels/Levels Finals/Ato 1 - 1.unity
     guid: 4d93ca464627fc347b30e207b5576992
   - enabled: 1
-    path: Assets/Scenes/Levels/Levels Finals/Tutorial 2.unity
+    path: Assets/Scenes/Levels/Levels Finals/Ato 1 - 2.unity
     guid: 68dfda0d08482bc41ac9db7c445b648a
   - enabled: 1
-    path: Assets/Scenes/Levels/Levels Finals/Tutorial 3.unity
+    path: Assets/Scenes/Levels/Levels Finals/Ato 1 - 3.unity
     guid: 400a4269364fa384eb332d78786e3489
   - enabled: 1
-    path: Assets/Scenes/Levels/Levels Finals/Tutorial 4.unity
+    path: Assets/Scenes/Levels/Levels Finals/Ato 1 - 4.unity
     guid: c63046a71a8db3c46a5b03ac74b3f3da
   - enabled: 1
     path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 1.unity
@@ -63,14 +27,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 2.unity
     guid: 2571a8d71de4bbc43b092e589d8d79ac
   - enabled: 1
-    path: Assets/Scenes/Levels/Levels Finals/ATO2-4.unity
+    path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 3.unity
+    guid: b4f4abc163beadc458e2a015c018ec9f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 4.unity
     guid: 19a8724cd54d0184e8bc8c10e91136b2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 5.unity
+    guid: 9bcf8631a40a91e44a9dc7dbf11faeae
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 6.unity
+    guid: 94d81f59faa3d324ea63c90961a1c677
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels Finals/Ato 2 - 7.unity
+    guid: 91d7c29648783d547a1edb498f1150b7
   - enabled: 1
     path: Assets/Scenes/Levels/Levels Finals/Ato 3 - 1.unity
     guid: fe394c67826bfe140b27449f6d3b4751
   - enabled: 1
     path: Assets/Scenes/Levels/Levels Finals/Ato 3 - 2.unity
     guid: 3fb62b2a135af03488f18e027da991c1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Levels Finals/Ato 3 - 3.unity
+    guid: 59148e488bae217449f8aa1ad1a853c3
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c71d7dcbe4d2ae14e9a4f5028860ac4b
