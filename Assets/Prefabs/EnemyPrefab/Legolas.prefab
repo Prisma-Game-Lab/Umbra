@@ -187,8 +187,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580106371535238}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.39, y: -0.1, z: 9.26}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06, y: -0.059999943, z: 31.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4467259336362972}
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 4661051823251116}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4889121584042228
 Transform:
   m_ObjectHideFlags: 1
@@ -315,6 +315,7 @@ MonoBehaviour:
   - {fileID: 1177024674457056}
   - {fileID: 1993636730413160}
   - {fileID: 1097542836686010}
+  - {fileID: 1580106371535238}
   NewLayer: DeadEnemy
   ShouldSetThisToUnseen: 0
   cameraShake: {fileID: 0}

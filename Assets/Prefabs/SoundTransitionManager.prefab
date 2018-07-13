@@ -39,8 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf27ee7f219f6f41a1c0e03b1a93e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShouldChangeMusic: 0
-  BGMusic: {fileID: 0}
+  ShouldChangeMusic: 1
+  BGMusic: {fileID: 8300000, guid: c053cfb54bf726c42b27d563de39cfce, type: 3}
 --- !u!114 &114173954215265694
 MonoBehaviour:
   m_ObjectHideFlags: 1
