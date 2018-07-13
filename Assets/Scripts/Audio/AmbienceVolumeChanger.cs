@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AmbienceVolumeChanger : MonoBehaviour {
-	public bool ShouldChangeVolume = false;
-	[Range(0,1)] public float NewVolume;
+	[System.Serializable] public class ChangerOptions
+	{
+		[Range(0,1)] public float NewVolume;
+		public AudioSource SoundToChange;
+	}
+
+	public ChangerOptions[] Sounds;
 
 	// Use this for initialization
 	void Start () {
-		if (ShouldChangeVolume) {
-			LevelManager.Instance.ProgressiveAmbientSound.volume = NewVolume;
+		foreach (ChangerOptions sound in Sounds) {
+			sound.SoundToChange.volume = sound.NewVolume;
 		}
 	}
 	
