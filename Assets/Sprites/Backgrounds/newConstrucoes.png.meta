@@ -2,20 +2,20 @@ fileFormatVersion: 2
 guid: ae3483b461a0f23439b55b1f3d38746e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: newConstrucoes_0
-    21300002: newConstrucoes_1
-    21300004: newConstrucoes_2
-    21300006: newConstrucoes_3
-    21300008: newConstrucoes_4
-    21300010: newConstrucoes_5
-    21300012: newConstrucoes_6
-    21300014: newConstrucoes_7
-    21300016: newConstrucoes_8
-    21300018: newConstrucoes_9
-    21300020: newConstrucoes_10
-    21300022: newConstrucoes_11
-    21300024: newConstrucoes_12
-    21300026: newConstrucoes_13
+    21300000: construcaoTopo4
+    21300002: construcaoTopo2
+    21300004: construcaoTopo3
+    21300006: construcaoMeio4
+    21300008: construcaoTopo1
+    21300010: construcaoMeio2
+    21300012: construcaoMeio3
+    21300014: construcaoBaixo4
+    21300016: construcaoMeio1
+    21300018: construcaoBaixo2
+    21300020: construcaoBaixo3
+    21300022: construcaoBaixo1
+    21300024: construcaoPilar1
+    21300026: construcaoPilar2
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: newConstrucoes_0
+      name: construcaoTopo4
       rect:
         serializedVersion: 2
         x: 1516
@@ -115,7 +115,7 @@ TextureImporter:
         width: 181
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -127,7 +127,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_1
+      name: construcaoTopo2
       rect:
         serializedVersion: 2
         x: 599
@@ -135,7 +135,7 @@ TextureImporter:
         width: 158
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_2
+      name: construcaoTopo3
       rect:
         serializedVersion: 2
         x: 1008
@@ -155,7 +155,7 @@ TextureImporter:
         width: 121
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_3
+      name: construcaoMeio4
       rect:
         serializedVersion: 2
         x: 1500
@@ -175,7 +175,7 @@ TextureImporter:
         width: 216
         height: 189
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,7 +187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_4
+      name: construcaoTopo1
       rect:
         serializedVersion: 2
         x: 204
@@ -195,7 +195,7 @@ TextureImporter:
         width: 170
         height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_5
+      name: construcaoMeio2
       rect:
         serializedVersion: 2
         x: 593
@@ -215,7 +215,7 @@ TextureImporter:
         width: 167
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,7 +227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_6
+      name: construcaoMeio3
       rect:
         serializedVersion: 2
         x: 1000
@@ -235,7 +235,7 @@ TextureImporter:
         width: 141
         height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,7 +247,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_7
+      name: construcaoBaixo4
       rect:
         serializedVersion: 2
         x: 1476
@@ -255,7 +255,7 @@ TextureImporter:
         width: 252
         height: 205
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,7 +267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_8
+      name: construcaoMeio1
       rect:
         serializedVersion: 2
         x: 195
@@ -275,7 +275,7 @@ TextureImporter:
         width: 190
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,7 +287,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_9
+      name: construcaoBaixo2
       rect:
         serializedVersion: 2
         x: 527
@@ -295,7 +295,7 @@ TextureImporter:
         width: 285
         height: 160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_10
+      name: construcaoBaixo3
       rect:
         serializedVersion: 2
         x: 985
@@ -315,7 +315,7 @@ TextureImporter:
         width: 197
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_11
+      name: construcaoBaixo1
       rect:
         serializedVersion: 2
         x: 144
@@ -335,7 +335,7 @@ TextureImporter:
         width: 261
         height: 172
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -347,7 +347,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_12
+      name: construcaoPilar1
       rect:
         serializedVersion: 2
         x: 1476
@@ -355,7 +355,7 @@ TextureImporter:
         width: 48
         height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: newConstrucoes_13
+      name: construcaoPilar2
       rect:
         serializedVersion: 2
         x: 1656
@@ -375,7 +375,7 @@ TextureImporter:
         width: 89
         height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
